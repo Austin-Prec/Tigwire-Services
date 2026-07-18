@@ -45,9 +45,9 @@ export default function LinkPreviewBlock({ content }: LinkPreviewBlockProps) {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
         }`}
       >
-        <div className="max-w-3xl rounded-[24px] bg-white/60 backdrop-blur-sm border border-white/80 p-8 md:p-10 shadow-[0_20px_50px_-20px_rgba(21,42,74,0.15)]">
+        <div className="max-w-3xl rounded-[24px] bg-white/60 backdrop-blur-sm border border-white/80 p-8 md:p-10 shadow-[0_20px_50px_-20px_rgba(21, 24, 26,0.15)]">
           {content.title && (
-            <h2 className="font-garamond text-navy-500 text-2xl md:text-3xl font-semibold mb-6">
+            <h2 className="font-garamond text-charcoal-500 text-2xl md:text-3xl font-semibold mb-6">
               {content.title}
             </h2>
           )}

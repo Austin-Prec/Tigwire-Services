@@ -100,9 +100,9 @@ export default function Article() {
   return (
     <div>
       {/* Article Header */}
-      <section className="bg-navy-500 pt-28 pb-16 md:pt-36 md:pb-20">
+      <section className="bg-charcoal-500 pt-28 pb-16 md:pt-36 md:pb-20">
         <div className="container-main px-6 lg:px-20">
-          <Link to="/insights" className="inline-flex items-center gap-2 text-navy-200 hover:text-white mb-6 transition-colors">
+          <Link to="/insights" className="inline-flex items-center gap-2 text-charcoal-200 hover:text-white mb-6 transition-colors">
             <ArrowLeft size={16} /> Back to Insights
           </Link>
           <div className="max-w-3xl">
@@ -113,7 +113,7 @@ export default function Article() {
             <h1 className="font-garamond text-white text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
               {article.title}
             </h1>
-            <div className="flex flex-wrap items-center gap-4 text-navy-200 text-sm">
+            <div className="flex flex-wrap items-center gap-4 text-charcoal-200 text-sm">
               <div className="flex items-center gap-1">
                 <Calendar size={14} />
                 <span>{formatDate(article.published_at)}</span>
@@ -180,7 +180,7 @@ export default function Article() {
             {/* Sidebar - Author Bio */}
             <div className="lg:col-span-1">
               <div className="bg-gray-50 rounded-lg p-6 sticky top-28">
-                <h3 className="font-garamond text-navy-500 text-lg font-bold mb-3">About Tigwire Services</h3>
+                <h3 className="font-garamond text-charcoal-500 text-lg font-bold mb-3">About Tigwire Services</h3>
                 <p className="font-arial text-gray-600 text-sm leading-relaxed mb-3">
                   <strong>Tigwire Services</strong> is a Malawian-owned cleaning company serving homes, offices, schools, hotels, and banks, with a commitment to reliable, affordable, and environmentally responsible service.
                 </p>

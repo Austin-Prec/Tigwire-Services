@@ -52,26 +52,26 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <header className="bg-navy-500 px-6 py-5 md:px-10">
+      <header className="bg-charcoal-500 px-6 py-5 md:px-10">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <div>
             <h1 className="font-garamond text-white text-xl md:text-2xl font-bold">
               Your posts
             </h1>
-            <p className="font-arial text-navy-200 text-xs mt-1">
+            <p className="font-arial text-charcoal-200 text-xs mt-1">
               Tigwire Services — writing area
             </p>
           </div>
           <div className="flex items-center gap-5">
             <Link
               to="/admin/pages"
-              className="flex items-center gap-2 text-navy-200 hover:text-white text-sm font-arial transition-colors"
+              className="flex items-center gap-2 text-charcoal-200 hover:text-white text-sm font-arial transition-colors"
             >
               <LayoutTemplate size={16} /> Site pages
             </Link>
             <button
               onClick={handleSignOut}
-              className="flex items-center gap-2 text-navy-200 hover:text-white text-sm font-arial transition-colors"
+              className="flex items-center gap-2 text-charcoal-200 hover:text-white text-sm font-arial transition-colors"
             >
               <LogOut size={16} /> Sign out
             </button>
@@ -102,7 +102,7 @@ export default function Dashboard() {
 
         {!isLoading && !loadError && articles.length === 0 && (
           <div className="bg-white border border-gray-200 rounded-lg py-16 text-center">
-            <p className="font-garamond text-navy-500 text-xl font-bold mb-2">
+            <p className="font-garamond text-charcoal-500 text-xl font-bold mb-2">
               Nothing here yet
             </p>
             <p className="font-arial text-gray-500 text-sm mb-6">
@@ -126,7 +126,7 @@ export default function Dashboard() {
               <div className="min-w-0">
                 <div className="flex items-center gap-2 mb-1">
                   <StatusBadge status={article.status} />
-                  <h3 className="font-garamond text-navy-500 font-bold truncate">
+                  <h3 className="font-garamond text-charcoal-500 font-bold truncate">
                     {article.title || 'Untitled'}
                   </h3>
                 </div>
@@ -144,7 +144,7 @@ export default function Dashboard() {
                     target="_blank"
                     rel="noopener noreferrer"
                     title="View live"
-                    className="p-2 text-gray-400 hover:text-navy-500 transition-colors"
+                    className="p-2 text-gray-400 hover:text-charcoal-500 transition-colors"
                   >
                     <Eye size={16} />
                   </a>
@@ -152,7 +152,7 @@ export default function Dashboard() {
                 <Link
                   to={`/admin/edit/${article.id}`}
                   title="Edit"
-                  className="p-2 text-gray-400 hover:text-navy-500 transition-colors"
+                  className="p-2 text-gray-400 hover:text-charcoal-500 transition-colors"
                 >
                   <Pencil size={16} />
                 </Link>

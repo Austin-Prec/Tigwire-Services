@@ -21,9 +21,9 @@ interface ContactSidebarBlockProps {
 export default function ContactSidebarBlock({ content }: ContactSidebarBlockProps) {
   return (
     <div className="lg:col-span-2">
-      <div className="rounded-2xl bg-gray-50 border border-gray-200 p-8 sticky top-28 transition-shadow duration-300 hover:shadow-[0_20px_50px_-20px_rgba(21,42,74,0.2)]">
+      <div className="rounded-2xl bg-gray-50 border border-gray-200 p-8 sticky top-28 transition-shadow duration-300 hover:shadow-[0_20px_50px_-20px_rgba(21, 24, 26,0.2)]">
         {content.heading && (
-          <h3 className="font-garamond text-navy-500 text-xl font-semibold mb-6">
+          <h3 className="font-garamond text-charcoal-500 text-xl font-semibold mb-6">
             {content.heading}
           </h3>
         )}
@@ -50,7 +50,7 @@ export default function ContactSidebarBlock({ content }: ContactSidebarBlockProp
                   <IconComponent size={18} className="text-sage-400" />
                 </div>
                 <div>
-                  <p className="font-arial text-navy-500 text-xs font-semibold uppercase tracking-wider mb-1">
+                  <p className="font-arial text-charcoal-500 text-xs font-semibold uppercase tracking-wider mb-1">
                     {channel.label}
                   </p>
                   {valueContent}
@@ -67,11 +67,11 @@ export default function ContactSidebarBlock({ content }: ContactSidebarBlockProp
           <>
             <div className="border-t border-gray-200 my-6" />
             <div className="flex items-start gap-4">
-              <div className="bg-navy-100 p-2 rounded-lg">
-                <Clock size={18} className="text-navy-500" />
+              <div className="bg-charcoal-100 p-2 rounded-lg">
+                <Clock size={18} className="text-charcoal-500" />
               </div>
               <div>
-                <p className="font-arial text-navy-500 text-xs font-semibold uppercase tracking-wider mb-1">
+                <p className="font-arial text-charcoal-500 text-xs font-semibold uppercase tracking-wider mb-1">
                   Response Time
                 </p>
                 <p className="font-arial text-gray-600 text-sm">{content.response_time}</p>

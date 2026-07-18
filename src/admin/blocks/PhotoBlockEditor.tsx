@@ -61,7 +61,7 @@ export default function PhotoBlockEditor({ content, onChange }: PhotoBlockEditor
             <img src={content.image_url} alt="" className="w-40 h-40 object-cover rounded-lg" />
             <button
               onClick={() => fileInputRef.current?.click()}
-              className="mt-2 text-xs text-navy-500 hover:underline font-arial"
+              className="mt-2 text-xs text-charcoal-500 hover:underline font-arial"
             >
               Replace photo
             </button>
@@ -70,7 +70,7 @@ export default function PhotoBlockEditor({ content, onChange }: PhotoBlockEditor
           <button
             onClick={() => fileInputRef.current?.click()}
             disabled={isUploading}
-            className="w-40 h-40 border-2 border-dashed border-gray-300 rounded-lg flex flex-col items-center justify-center gap-2 text-gray-400 hover:border-navy-300 hover:text-navy-400 transition-colors"
+            className="w-40 h-40 border-2 border-dashed border-gray-300 rounded-lg flex flex-col items-center justify-center gap-2 text-gray-400 hover:border-charcoal-300 hover:text-charcoal-400 transition-colors"
           >
             <ImagePlus size={22} />
             <span className="font-arial text-xs">{isUploading ? 'Uploading…' : 'Add photo'}</span>
@@ -100,7 +100,7 @@ export default function PhotoBlockEditor({ content, onChange }: PhotoBlockEditor
               <select
                 value={badge.icon}
                 onChange={(e) => updateBadge(i, 'icon', e.target.value)}
-                className="px-2 py-1.5 border border-gray-300 rounded-lg font-arial text-xs focus:outline-none focus:border-navy-400"
+                className="px-2 py-1.5 border border-gray-300 rounded-lg font-arial text-xs focus:outline-none focus:border-charcoal-400"
               >
                 {BADGE_ICONS.map((icon) => (
                   <option key={icon} value={icon}>{icon}</option>
@@ -111,7 +111,7 @@ export default function PhotoBlockEditor({ content, onChange }: PhotoBlockEditor
                 value={badge.text}
                 onChange={(e) => updateBadge(i, 'text', e.target.value)}
                 placeholder="e.g. Southern Africa"
-                className="flex-1 px-3 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+                className="flex-1 px-3 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
               />
               <button
                 onClick={() => removeBadge(i)}
@@ -125,7 +125,7 @@ export default function PhotoBlockEditor({ content, onChange }: PhotoBlockEditor
         </div>
         <button
           onClick={addBadge}
-          className="mt-2 flex items-center gap-1 text-xs text-navy-500 hover:underline font-arial"
+          className="mt-2 flex items-center gap-1 text-xs text-charcoal-500 hover:underline font-arial"
         >
           <Plus size={12} /> Add badge
         </button>

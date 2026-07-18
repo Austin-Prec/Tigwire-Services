@@ -75,7 +75,7 @@ export default function FrameworkSectionBlock({ content }: FrameworkSectionProps
               <IconComponent size={28} className="text-sage-400" strokeWidth={1.5} />
             </div>
             {content.heading && (
-              <h2 className="font-garamond text-navy-500 text-2xl md:text-3xl font-semibold">
+              <h2 className="font-garamond text-charcoal-500 text-2xl md:text-3xl font-semibold">
                 {content.heading}
               </h2>
             )}
@@ -105,7 +105,7 @@ export default function FrameworkSectionBlock({ content }: FrameworkSectionProps
             href={content.download_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 rounded-lg bg-gradient-to-br from-clay-200 to-clay-300 px-6 py-3 font-arial text-sm font-semibold text-navy-600 shadow-[0_4px_16px_rgba(181,117,74,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(181,117,74,0.45)]"
+            className="group inline-flex items-center gap-2 rounded-lg bg-gradient-to-br from-clay-200 to-clay-300 px-6 py-3 font-arial text-sm font-semibold text-charcoal-600 shadow-[0_4px_16px_rgba(181,117,74,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(181,117,74,0.45)]"
           >
             <Download size={16} className="transition-transform duration-300 group-hover:translate-y-0.5" />
             {content.download_label}
@@ -145,7 +145,7 @@ function PillarCard({
   return (
     <div
       ref={ref}
-      className={`rounded-xl border border-gray-200 bg-white p-6 lg:p-8 transition-all duration-500 hover:-translate-y-1.5 hover:border-transparent hover:shadow-[0_30px_60px_-15px_rgba(21,42,74,0.3),inset_0_1px_0_rgba(255,255,255,0.6)] ${
+      className={`rounded-xl border border-gray-200 bg-white p-6 lg:p-8 transition-all duration-500 hover:-translate-y-1.5 hover:border-transparent hover:shadow-[0_30px_60px_-15px_rgba(21, 24, 26,0.3),inset_0_1px_0_rgba(255,255,255,0.6)] ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
       }`}
       style={{ transitionDelay: isVisible ? `${index * 80}ms` : '0ms' }}
@@ -153,7 +153,7 @@ function PillarCard({
       <div className="font-garamond text-clay-500 text-2xl font-semibold mb-1">
         {pillar.number}
       </div>
-      <h4 className="font-garamond text-navy-500 text-base font-semibold mb-3">
+      <h4 className="font-garamond text-charcoal-500 text-base font-semibold mb-3">
         {pillar.name}
       </h4>
       <p className="font-arial text-gray-600 text-sm leading-relaxed">

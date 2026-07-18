@@ -82,9 +82,9 @@ export default function ContactForm() {
 
   return (
     <div className="lg:col-span-3">
-      <div className="rounded-2xl bg-navy-50 border border-navy-100 p-4 mb-6 flex items-center gap-3">
+      <div className="rounded-2xl bg-charcoal-50 border border-charcoal-100 p-4 mb-6 flex items-center gap-3">
         <Shield size={20} className="text-sage-400" />
-        <p className="font-arial text-navy-600 text-sm">
+        <p className="font-arial text-charcoal-600 text-sm">
           We respond to every enquiry with a free quotation and, where useful,
           a site inspection before any work begins.
         </p>
@@ -105,7 +105,7 @@ export default function ContactForm() {
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
-              <label className="block font-arial text-navy-500 text-sm font-semibold mb-2">
+              <label className="block font-arial text-charcoal-500 text-sm font-semibold mb-2">
                 Full Name <span className="text-sage-400">*</span>
               </label>
               <input
@@ -114,12 +114,12 @@ export default function ContactForm() {
                 value={formData.fullName}
                 onChange={handleChange}
                 required
-                className="w-full border border-gray-300 rounded-xl px-4 py-3 font-arial text-sm text-gray-800 focus:outline-none focus:border-navy-400 focus:ring-1 focus:ring-navy-400 transition-all"
+                className="w-full border border-gray-300 rounded-xl px-4 py-3 font-arial text-sm text-gray-800 focus:outline-none focus:border-charcoal-400 focus:ring-1 focus:ring-charcoal-400 transition-all"
                 placeholder="Your full name"
               />
             </div>
             <div>
-              <label className="block font-arial text-navy-500 text-sm font-semibold mb-2">
+              <label className="block font-arial text-charcoal-500 text-sm font-semibold mb-2">
                 Organisation <span className="text-gray-400 font-normal">(if applicable)</span>
               </label>
               <input
@@ -127,7 +127,7 @@ export default function ContactForm() {
                 name="organisation"
                 value={formData.organisation}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-xl px-4 py-3 font-arial text-sm text-gray-800 focus:outline-none focus:border-navy-400 focus:ring-1 focus:ring-navy-400 transition-all"
+                className="w-full border border-gray-300 rounded-xl px-4 py-3 font-arial text-sm text-gray-800 focus:outline-none focus:border-charcoal-400 focus:ring-1 focus:ring-charcoal-400 transition-all"
                 placeholder="Leave blank for residential enquiries"
               />
             </div>
@@ -135,7 +135,7 @@ export default function ContactForm() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
-              <label className="block font-arial text-navy-500 text-sm font-semibold mb-2">
+              <label className="block font-arial text-charcoal-500 text-sm font-semibold mb-2">
                 Email Address <span className="text-sage-400">*</span>
               </label>
               <input
@@ -144,12 +144,12 @@ export default function ContactForm() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full border border-gray-300 rounded-xl px-4 py-3 font-arial text-sm text-gray-800 focus:outline-none focus:border-navy-400 focus:ring-1 focus:ring-navy-400 transition-all"
+                className="w-full border border-gray-300 rounded-xl px-4 py-3 font-arial text-sm text-gray-800 focus:outline-none focus:border-charcoal-400 focus:ring-1 focus:ring-charcoal-400 transition-all"
                 placeholder="you@organisation.org"
               />
             </div>
             <div>
-              <label className="block font-arial text-navy-500 text-sm font-semibold mb-2">
+              <label className="block font-arial text-charcoal-500 text-sm font-semibold mb-2">
                 Phone Number
               </label>
               <input
@@ -157,14 +157,14 @@ export default function ContactForm() {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-xl px-4 py-3 font-arial text-sm text-gray-800 focus:outline-none focus:border-navy-400 focus:ring-1 focus:ring-navy-400 transition-all"
+                className="w-full border border-gray-300 rounded-xl px-4 py-3 font-arial text-sm text-gray-800 focus:outline-none focus:border-charcoal-400 focus:ring-1 focus:ring-charcoal-400 transition-all"
                 placeholder="+265 992 477 611"
               />
             </div>
           </div>
 
           <div>
-            <label className="block font-arial text-navy-500 text-sm font-semibold mb-2">
+            <label className="block font-arial text-charcoal-500 text-sm font-semibold mb-2">
               Nature of Enquiry <span className="text-sage-400">*</span>
             </label>
             <select
@@ -172,7 +172,7 @@ export default function ContactForm() {
               value={formData.enquiryType}
               onChange={handleChange}
               required
-              className="w-full border border-gray-300 rounded-xl px-4 py-3 font-arial text-sm text-gray-800 focus:outline-none focus:border-navy-400 focus:ring-1 focus:ring-navy-400 transition-all"
+              className="w-full border border-gray-300 rounded-xl px-4 py-3 font-arial text-sm text-gray-800 focus:outline-none focus:border-charcoal-400 focus:ring-1 focus:ring-charcoal-400 transition-all"
             >
               <option value="">Select an option</option>
               {enquiryTypes.map((type) => (
@@ -184,7 +184,7 @@ export default function ContactForm() {
           </div>
 
           <div>
-            <label className="block font-arial text-navy-500 text-sm font-semibold mb-2">
+            <label className="block font-arial text-charcoal-500 text-sm font-semibold mb-2">
               Message <span className="text-sage-400">*</span>
             </label>
             <textarea
@@ -193,7 +193,7 @@ export default function ContactForm() {
               onChange={handleChange}
               required
               rows={5}
-              className="w-full border border-gray-300 rounded-xl px-4 py-3 font-arial text-sm text-gray-800 focus:outline-none focus:border-navy-400 focus:ring-1 focus:ring-navy-400 transition-all resize-vertical"
+              className="w-full border border-gray-300 rounded-xl px-4 py-3 font-arial text-sm text-gray-800 focus:outline-none focus:border-charcoal-400 focus:ring-1 focus:ring-charcoal-400 transition-all resize-vertical"
               placeholder="Tell us about the space you need cleaned and how often..."
             />
           </div>
@@ -205,7 +205,7 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={submitting}
-            className="w-full bg-gradient-to-br from-navy-500 to-navy-600 text-white px-6 py-3.5 rounded-xl font-semibold shadow-[0_8px_24px_-8px_rgba(21,42,74,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_32px_-8px_rgba(21,42,74,0.5)] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0 flex items-center justify-center gap-2"
+            className="w-full bg-gradient-to-br from-charcoal-500 to-charcoal-600 text-white px-6 py-3.5 rounded-xl font-semibold shadow-[0_8px_24px_-8px_rgba(21, 24, 26,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_32px_-8px_rgba(21, 24, 26,0.5)] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0 flex items-center justify-center gap-2"
           >
             <Send size={16} />
             {submitting ? 'Sending...' : 'Send Enquiry'}

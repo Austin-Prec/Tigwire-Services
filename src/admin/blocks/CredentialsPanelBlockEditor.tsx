@@ -69,7 +69,7 @@ export default function CredentialsPanelBlockEditor({
                 value={panel.heading}
                 onChange={(e) => updatePanel(i, { heading: e.target.value })}
                 placeholder="Panel heading, e.g. Legal Registration"
-                className="flex-1 px-3 py-1.5 border border-gray-300 rounded-lg font-arial text-sm font-semibold focus:outline-none focus:border-navy-400"
+                className="flex-1 px-3 py-1.5 border border-gray-300 rounded-lg font-arial text-sm font-semibold focus:outline-none focus:border-charcoal-400"
               />
               <button
                 onClick={() => removePanel(i)}
@@ -88,14 +88,14 @@ export default function CredentialsPanelBlockEditor({
                     value={field.label}
                     onChange={(e) => updateField(i, j, 'label', e.target.value)}
                     placeholder="Label"
-                    className="w-1/3 px-2 py-1 border border-gray-300 rounded-lg font-arial text-xs focus:outline-none focus:border-navy-400"
+                    className="w-1/3 px-2 py-1 border border-gray-300 rounded-lg font-arial text-xs focus:outline-none focus:border-charcoal-400"
                   />
                   <input
                     type="text"
                     value={field.value}
                     onChange={(e) => updateField(i, j, 'value', e.target.value)}
                     placeholder="Value"
-                    className="flex-1 px-2 py-1 border border-gray-300 rounded-lg font-arial text-xs focus:outline-none focus:border-navy-400"
+                    className="flex-1 px-2 py-1 border border-gray-300 rounded-lg font-arial text-xs focus:outline-none focus:border-charcoal-400"
                   />
                   <button
                     onClick={() => removeField(i, j)}
@@ -108,7 +108,7 @@ export default function CredentialsPanelBlockEditor({
               ))}
               <button
                 onClick={() => addField(i)}
-                className="flex items-center gap-1 text-xs text-navy-500 hover:underline font-arial"
+                className="flex items-center gap-1 text-xs text-charcoal-500 hover:underline font-arial"
               >
                 <Plus size={11} /> Add field
               </button>
@@ -119,21 +119,21 @@ export default function CredentialsPanelBlockEditor({
               value={panel.note ?? ''}
               onChange={(e) => updatePanel(i, { note: e.target.value })}
               placeholder="Note (optional, e.g. ✓ Certificate issued 08 May 2026)"
-              className="w-full px-3 py-1.5 border border-gray-300 rounded-lg font-arial text-xs focus:outline-none focus:border-navy-400"
+              className="w-full px-3 py-1.5 border border-gray-300 rounded-lg font-arial text-xs focus:outline-none focus:border-charcoal-400"
             />
             <input
               type="text"
               value={panel.note2 ?? ''}
               onChange={(e) => updatePanel(i, { note2: e.target.value })}
               placeholder="Second note (optional)"
-              className="w-full px-3 py-1.5 border border-gray-300 rounded-lg font-arial text-xs focus:outline-none focus:border-navy-400"
+              className="w-full px-3 py-1.5 border border-gray-300 rounded-lg font-arial text-xs focus:outline-none focus:border-charcoal-400"
             />
           </div>
         ))}
       </div>
       <button
         onClick={addPanel}
-        className="flex items-center gap-1 text-xs text-navy-500 hover:underline font-arial"
+        className="flex items-center gap-1 text-xs text-charcoal-500 hover:underline font-arial"
       >
         <Plus size={12} /> Add panel
       </button>

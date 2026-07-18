@@ -80,7 +80,7 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
   return (
     <div
       ref={ref}
-      className={`group relative rounded-2xl border p-6 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(21,42,74,0.3),inset_0_1px_0_rgba(255,255,255,0.6)] ${
+      className={`group relative rounded-2xl border p-6 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(21, 24, 26,0.3),inset_0_1px_0_rgba(255,255,255,0.6)] ${
         isCustom ? 'border-clay-200/50 hover:border-transparent' : 'border-gray-200 hover:border-transparent'
       } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
       style={{ transitionDelay: isVisible ? `${index * 70}ms` : '0ms' }}
@@ -90,7 +90,7 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
           that would clash with the page's otherwise even-handed pricing
           presentation. */}
       {isCustom && (
-        <div className="absolute -top-2.5 right-5 rounded-full bg-gradient-to-br from-clay-200 to-clay-300 px-3 py-1 text-[10px] font-arial font-bold uppercase tracking-wide text-navy-600 shadow-sm">
+        <div className="absolute -top-2.5 right-5 rounded-full bg-gradient-to-br from-clay-200 to-clay-300 px-3 py-1 text-[10px] font-arial font-bold uppercase tracking-wide text-charcoal-600 shadow-sm">
           Bespoke
         </div>
       )}
@@ -107,7 +107,7 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
         />
       </div>
 
-      <h3 className="font-garamond text-navy-500 text-lg font-semibold mb-2">
+      <h3 className="font-garamond text-charcoal-500 text-lg font-semibold mb-2">
         {service.title}
       </h3>
       <p className="text-sage-400 text-sm font-semibold mb-3">
@@ -117,7 +117,7 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
         {service.description}
       </p>
       <div className="pt-3 border-t border-gray-100">
-        <p className="font-garamond text-navy-600 text-lg font-semibold">
+        <p className="font-garamond text-charcoal-600 text-lg font-semibold">
           {service.price}
         </p>
         {service.price_note && (
@@ -130,8 +130,8 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
         to="/contact"
         className={`inline-flex items-center justify-center w-full text-center mt-4 px-4 py-2.5 rounded-lg font-arial text-sm font-semibold transition-all duration-300 ${
           isCustom
-            ? 'bg-gradient-to-br from-clay-200 to-clay-300 text-navy-600 hover:shadow-[0_6px_16px_rgba(181,117,74,0.35)]'
-            : 'border border-navy-500 text-navy-500 hover:bg-navy-500 hover:text-white'
+            ? 'bg-gradient-to-br from-clay-200 to-clay-300 text-charcoal-600 hover:shadow-[0_6px_16px_rgba(181,117,74,0.35)]'
+            : 'border border-charcoal-500 text-charcoal-500 hover:bg-charcoal-500 hover:text-white'
         }`}
       >
         {isCustom ? 'Request Quote' : 'Book Service'}

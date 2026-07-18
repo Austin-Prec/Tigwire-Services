@@ -63,15 +63,15 @@ Deno.serve(async (req: Request) => {
     if (RESEND_API_KEY) {
       const emailHtml = `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #1a1a1a;">
-          <h2 style="color: #152A4A; font-family: Georgia, serif;">New Contact Enquiry</h2>
+          <h2 style="color: #15181A; font-family: Arial, sans-serif;">New Contact Enquiry</h2>
           <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
-            <tr><td style="padding: 8px 0; font-weight: 600; color: #152A4A; width: 140px;">Full Name</td><td style="padding: 8px 0;">${body.fullName}</td></tr>
-            <tr><td style="padding: 8px 0; font-weight: 600; color: #152A4A;">Organisation</td><td style="padding: 8px 0;">${body.organisation || "Not provided"}</td></tr>
-            <tr><td style="padding: 8px 0; font-weight: 600; color: #152A4A;">Email</td><td style="padding: 8px 0;"><a href="mailto:${body.email}">${body.email}</a></td></tr>
-            <tr><td style="padding: 8px 0; font-weight: 600; color: #152A4A;">Phone</td><td style="padding: 8px 0;">${body.phone || "Not provided"}</td></tr>
-            <tr><td style="padding: 8px 0; font-weight: 600; color: #152A4A;">Enquiry Type</td><td style="padding: 8px 0;">${body.enquiryType}</td></tr>
+            <tr><td style="padding: 8px 0; font-weight: 600; color: #15181A; width: 140px;">Full Name</td><td style="padding: 8px 0;">${body.fullName}</td></tr>
+            <tr><td style="padding: 8px 0; font-weight: 600; color: #15181A;">Organisation</td><td style="padding: 8px 0;">${body.organisation || "Not provided"}</td></tr>
+            <tr><td style="padding: 8px 0; font-weight: 600; color: #15181A;">Email</td><td style="padding: 8px 0;"><a href="mailto:${body.email}">${body.email}</a></td></tr>
+            <tr><td style="padding: 8px 0; font-weight: 600; color: #15181A;">Phone</td><td style="padding: 8px 0;">${body.phone || "Not provided"}</td></tr>
+            <tr><td style="padding: 8px 0; font-weight: 600; color: #15181A;">Enquiry Type</td><td style="padding: 8px 0;">${body.enquiryType}</td></tr>
           </table>
-          <h3 style="color: #152A4A; font-family: Georgia, serif; margin-top: 24px;">Message</h3>
+          <h3 style="color: #15181A; font-family: Arial, sans-serif; margin-top: 24px;">Message</h3>
           <p style="font-size: 14px; line-height: 1.7; color: #333; white-space: pre-wrap;">${body.message}</p>
           <hr style="border: none; border-top: 1px solid #ddd; margin: 24px 0;" />
           <p style="font-size: 12px; color: #888;">Submitted via Tigwire Services contact form</p>

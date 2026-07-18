@@ -19,7 +19,7 @@ export default function HeaderBlockEditor({ content, onChange }: HeaderBlockEdit
           type="text"
           value={content.title ?? ''}
           onChange={(e) => onChange({ ...content, title: e.target.value })}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+          className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
         />
       </div>
       <div>
@@ -30,7 +30,7 @@ export default function HeaderBlockEditor({ content, onChange }: HeaderBlockEdit
           value={content.intro ?? ''}
           onChange={(e) => onChange({ ...content, intro: e.target.value })}
           rows={2}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400 resize-none"
+          className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400 resize-none"
         />
       </div>
     </div>

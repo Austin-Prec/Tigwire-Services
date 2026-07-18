@@ -287,8 +287,8 @@ export default function RichTextEditor({ value, onChange }: RichTextEditorProps)
         )}
 
         {isDraggingOver && (
-          <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-navy-500/5 border-2 border-dashed border-navy-300 rounded">
-            <p className="font-arial text-sm font-semibold text-navy-500 bg-white px-4 py-2 rounded-lg shadow">
+          <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-charcoal-500/5 border-2 border-dashed border-charcoal-300 rounded">
+            <p className="font-arial text-sm font-semibold text-charcoal-500 bg-white px-4 py-2 rounded-lg shadow">
               Drop the photo to add it here
             </p>
           </div>
@@ -322,7 +322,7 @@ function ToolbarButton({
       aria-label={label}
       onClick={onClick}
       disabled={disabled}
-      className="p-2 rounded text-gray-600 hover:bg-navy-50 hover:text-navy-500 transition-colors disabled:opacity-40 disabled:pointer-events-none"
+      className="p-2 rounded text-gray-600 hover:bg-charcoal-50 hover:text-charcoal-500 transition-colors disabled:opacity-40 disabled:pointer-events-none"
     >
       {children}
     </button>

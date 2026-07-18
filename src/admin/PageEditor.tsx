@@ -170,19 +170,19 @@ export default function PageEditor() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <header className="bg-navy-500 px-6 py-5 md:px-10">
+      <header className="bg-charcoal-500 px-6 py-5 md:px-10">
         <div className="max-w-3xl mx-auto flex items-center justify-between">
           <button
             onClick={() => navigate('/admin')}
-            className="flex items-center gap-2 text-navy-200 hover:text-white text-sm font-arial transition-colors"
+            className="flex items-center gap-2 text-charcoal-200 hover:text-white text-sm font-arial transition-colors"
           >
             <ArrowLeft size={16} /> Back
           </button>
           <div className="flex items-center gap-4">
-            {saveMessage && <span className="font-arial text-xs text-navy-200">{saveMessage}</span>}
+            {saveMessage && <span className="font-arial text-xs text-charcoal-200">{saveMessage}</span>}
             <button
               onClick={handleSignOut}
-              className="flex items-center gap-2 text-navy-200 hover:text-white text-sm font-arial transition-colors"
+              className="flex items-center gap-2 text-charcoal-200 hover:text-white text-sm font-arial transition-colors"
             >
               <LogOut size={16} /> Sign out
             </button>
@@ -198,8 +198,8 @@ export default function PageEditor() {
               onClick={() => setActivePage(p.key)}
               className={`px-4 py-2 rounded-lg font-arial text-sm font-semibold transition-colors ${
                 activePage === p.key
-                  ? 'bg-navy-500 text-white'
-                  : 'bg-white text-gray-600 border border-gray-200 hover:border-navy-300'
+                  ? 'bg-charcoal-500 text-white'
+                  : 'bg-white text-gray-600 border border-gray-200 hover:border-charcoal-300'
               }`}
             >
               {p.label}
@@ -227,7 +227,7 @@ export default function PageEditor() {
                         onClick={() => handleMove(index, -1)}
                         disabled={index === 0}
                         title="Move up"
-                        className="p-1.5 text-gray-400 hover:text-navy-500 transition-colors disabled:opacity-30 disabled:pointer-events-none"
+                        className="p-1.5 text-gray-400 hover:text-charcoal-500 transition-colors disabled:opacity-30 disabled:pointer-events-none"
                       >
                         <ArrowUp size={15} />
                       </button>
@@ -235,7 +235,7 @@ export default function PageEditor() {
                         onClick={() => handleMove(index, 1)}
                         disabled={index === blocks.length - 1}
                         title="Move down"
-                        className="p-1.5 text-gray-400 hover:text-navy-500 transition-colors disabled:opacity-30 disabled:pointer-events-none"
+                        className="p-1.5 text-gray-400 hover:text-charcoal-500 transition-colors disabled:opacity-30 disabled:pointer-events-none"
                       >
                         <ArrowDown size={15} />
                       </button>
@@ -343,7 +343,7 @@ export default function PageEditor() {
                   <button
                     onClick={() => handleSaveBlock(block)}
                     disabled={savingId === block.id}
-                    className="mt-3 px-4 py-1.5 bg-navy-500 text-white rounded-lg font-arial text-xs font-semibold hover:bg-navy-600 transition-colors disabled:opacity-50"
+                    className="mt-3 px-4 py-1.5 bg-charcoal-500 text-white rounded-lg font-arial text-xs font-semibold hover:bg-charcoal-600 transition-colors disabled:opacity-50"
                   >
                     {savingId === block.id ? 'Saving…' : 'Save block'}
                   </button>
@@ -354,7 +354,7 @@ export default function PageEditor() {
             <div className="relative">
               <button
                 onClick={() => setShowAddMenu((s) => !s)}
-                className="w-full flex items-center justify-center gap-2 border-2 border-dashed border-gray-300 rounded-lg py-4 text-gray-500 hover:border-navy-300 hover:text-navy-500 transition-colors font-arial text-sm"
+                className="w-full flex items-center justify-center gap-2 border-2 border-dashed border-gray-300 rounded-lg py-4 text-gray-500 hover:border-charcoal-300 hover:text-charcoal-500 transition-colors font-arial text-sm"
               >
                 <Plus size={16} /> Add a block
               </button>
@@ -372,7 +372,7 @@ export default function PageEditor() {
                         onClick={() => handleAddBlock(type)}
                         className="w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-gray-50 transition-colors font-arial text-sm text-gray-700"
                       >
-                        <Icon size={16} className="text-navy-400" /> {info.label}
+                        <Icon size={16} className="text-charcoal-400" /> {info.label}
                       </button>
                     );
                   })}

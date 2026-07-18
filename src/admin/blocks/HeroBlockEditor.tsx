@@ -84,7 +84,7 @@ export default function HeroBlockEditor({ content, onChange }: HeroBlockEditorPr
             />
             <button
               onClick={() => fileInputRef.current?.click()}
-              className="mt-2 text-xs text-navy-500 hover:underline font-arial"
+              className="mt-2 text-xs text-charcoal-500 hover:underline font-arial"
             >
               Replace image
             </button>
@@ -93,7 +93,7 @@ export default function HeroBlockEditor({ content, onChange }: HeroBlockEditorPr
           <button
             onClick={() => fileInputRef.current?.click()}
             disabled={isUploading}
-            className="w-full max-w-xs h-28 border-2 border-dashed border-gray-300 rounded-lg flex flex-col items-center justify-center gap-2 text-gray-400 hover:border-navy-300 hover:text-navy-400 transition-colors"
+            className="w-full max-w-xs h-28 border-2 border-dashed border-gray-300 rounded-lg flex flex-col items-center justify-center gap-2 text-gray-400 hover:border-charcoal-300 hover:text-charcoal-400 transition-colors"
           >
             <ImagePlus size={20} />
             <span className="font-arial text-xs">{isUploading ? 'Uploading…' : 'Add background image'}</span>
@@ -119,7 +119,7 @@ export default function HeroBlockEditor({ content, onChange }: HeroBlockEditorPr
           value={content.headline ?? ''}
           onChange={(e) => onChange({ ...content, headline: e.target.value })}
           rows={2}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400 resize-none"
+          className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400 resize-none"
         />
       </div>
 
@@ -129,7 +129,7 @@ export default function HeroBlockEditor({ content, onChange }: HeroBlockEditorPr
           type="text"
           value={content.subheadline ?? ''}
           onChange={(e) => onChange({ ...content, subheadline: e.target.value })}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+          className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
         />
       </div>
 
@@ -141,7 +141,7 @@ export default function HeroBlockEditor({ content, onChange }: HeroBlockEditorPr
           value={content.quote ?? ''}
           onChange={(e) => onChange({ ...content, quote: e.target.value })}
           rows={2}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400 resize-none"
+          className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400 resize-none"
         />
       </div>
 
@@ -155,12 +155,12 @@ export default function HeroBlockEditor({ content, onChange }: HeroBlockEditorPr
                 value={btn.label}
                 onChange={(e) => updateButton(i, 'label', e.target.value)}
                 placeholder="Button text"
-                className="flex-1 min-w-[140px] px-3 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+                className="flex-1 min-w-[140px] px-3 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
               />
               <select
                 value={btn.link}
                 onChange={(e) => updateButton(i, 'link', e.target.value)}
-                className="px-2 py-1.5 border border-gray-300 rounded-lg font-arial text-xs focus:outline-none focus:border-navy-400"
+                className="px-2 py-1.5 border border-gray-300 rounded-lg font-arial text-xs focus:outline-none focus:border-charcoal-400"
               >
                 {SITE_PAGES.map((p) => (
                   <option key={p.value} value={p.value}>{p.label}</option>
@@ -169,7 +169,7 @@ export default function HeroBlockEditor({ content, onChange }: HeroBlockEditorPr
               <select
                 value={btn.style}
                 onChange={(e) => updateButton(i, 'style', e.target.value)}
-                className="px-2 py-1.5 border border-gray-300 rounded-lg font-arial text-xs focus:outline-none focus:border-navy-400"
+                className="px-2 py-1.5 border border-gray-300 rounded-lg font-arial text-xs focus:outline-none focus:border-charcoal-400"
               >
                 <option value="primary">Primary (filled)</option>
                 <option value="secondary">Secondary (outline)</option>
@@ -187,7 +187,7 @@ export default function HeroBlockEditor({ content, onChange }: HeroBlockEditorPr
         {buttons.length < 2 && (
           <button
             onClick={addButton}
-            className="mt-2 flex items-center gap-1 text-xs text-navy-500 hover:underline font-arial"
+            className="mt-2 flex items-center gap-1 text-xs text-charcoal-500 hover:underline font-arial"
           >
             <Plus size={12} /> Add button
           </button>

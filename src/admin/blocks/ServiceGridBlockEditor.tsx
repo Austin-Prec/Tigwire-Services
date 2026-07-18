@@ -87,7 +87,7 @@ export default function ServiceGridBlockEditor({ content, onChange }: ServiceGri
                       <select
                         value={service.icon}
                         onChange={(e) => updateService(i, 'icon', e.target.value)}
-                        className="w-full px-2 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+                        className="w-full px-2 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
                       >
                         {SERVICE_ICONS.map((icon) => (
                           <option key={icon} value={icon}>{icon}</option>
@@ -101,7 +101,7 @@ export default function ServiceGridBlockEditor({ content, onChange }: ServiceGri
                       <select
                         value={service.cta_type}
                         onChange={(e) => updateService(i, 'cta_type', e.target.value)}
-                        className="w-full px-2 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+                        className="w-full px-2 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
                       >
                         <option value="fixed">Book Service</option>
                         <option value="custom">Request Quote</option>
@@ -114,7 +114,7 @@ export default function ServiceGridBlockEditor({ content, onChange }: ServiceGri
                     value={service.title}
                     onChange={(e) => updateService(i, 'title', e.target.value)}
                     placeholder="Service title"
-                    className="w-full px-3 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+                    className="w-full px-3 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
                   />
 
                   <div>
@@ -125,7 +125,7 @@ export default function ServiceGridBlockEditor({ content, onChange }: ServiceGri
                       type="text"
                       value={service.outcome}
                       onChange={(e) => updateService(i, 'outcome', e.target.value)}
-                      className="w-full px-3 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+                      className="w-full px-3 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
                     />
                   </div>
 
@@ -134,7 +134,7 @@ export default function ServiceGridBlockEditor({ content, onChange }: ServiceGri
                     onChange={(e) => updateService(i, 'description', e.target.value)}
                     placeholder="Description"
                     rows={2}
-                    className="w-full px-3 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400 resize-none"
+                    className="w-full px-3 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400 resize-none"
                   />
 
                   <div className="grid grid-cols-2 gap-2">
@@ -145,7 +145,7 @@ export default function ServiceGridBlockEditor({ content, onChange }: ServiceGri
                         value={service.price}
                         onChange={(e) => updateService(i, 'price', e.target.value)}
                         placeholder="e.g. $2,500 - $4,500 USD"
-                        className="w-full px-2 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+                        className="w-full px-2 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
                       />
                     </div>
                     <div>
@@ -157,7 +157,7 @@ export default function ServiceGridBlockEditor({ content, onChange }: ServiceGri
                         value={service.price_note}
                         onChange={(e) => updateService(i, 'price_note', e.target.value)}
                         placeholder="e.g. per month"
-                        className="w-full px-2 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+                        className="w-full px-2 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
                       />
                     </div>
                   </div>
@@ -169,7 +169,7 @@ export default function ServiceGridBlockEditor({ content, onChange }: ServiceGri
       </div>
       <button
         onClick={addService}
-        className="mt-2 flex items-center gap-1 text-xs text-navy-500 hover:underline font-arial"
+        className="mt-2 flex items-center gap-1 text-xs text-charcoal-500 hover:underline font-arial"
       >
         <Plus size={12} /> Add service
       </button>

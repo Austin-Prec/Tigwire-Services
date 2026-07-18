@@ -34,7 +34,7 @@ export default function ValueCardsBlock({ content }: ValueCardsBlockProps) {
       <div className="relative container-main">
         <div className="text-center mb-14">
           {content.title && (
-            <h2 className="font-garamond text-navy-500 text-3xl md:text-4xl font-semibold mb-3">
+            <h2 className="font-garamond text-charcoal-500 text-3xl md:text-4xl font-semibold tracking-tight mb-3">
               {content.title}
             </h2>
           )}
@@ -81,7 +81,7 @@ function ValueCard({ card, index }: { card: ValueCard; index: number }) {
   return (
     <div
       ref={ref}
-      className={`group relative rounded-[20px] border border-gray-200 bg-white p-8 lg:p-9 transition-all duration-500 hover:-translate-y-2.5 hover:border-transparent hover:shadow-[0_30px_60px_-12px_rgba(21,42,74,0.3),inset_0_1px_0_rgba(255,255,255,0.6)] ${
+      className={`group relative rounded-[20px] border border-gray-200 bg-white p-8 lg:p-9 transition-all duration-500 hover:-translate-y-2.5 hover:border-transparent hover:shadow-[0_30px_60px_-12px_rgba(21, 24, 26,0.3),inset_0_1px_0_rgba(255,255,255,0.6)] ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
       }`}
       style={{ transitionDelay: isVisible ? `${index * 100}ms` : '0ms' }}
@@ -96,7 +96,7 @@ function ValueCard({ card, index }: { card: ValueCard; index: number }) {
         <IconComponent size={26} className="text-sage-400" strokeWidth={1.75} />
       </div>
 
-      <h3 className="font-garamond text-navy-500 text-xl font-semibold mb-3">
+      <h3 className="font-garamond text-charcoal-500 text-xl font-semibold mb-3">
         {card.title}
       </h3>
       <p className="font-arial text-gray-600 text-sm leading-relaxed">

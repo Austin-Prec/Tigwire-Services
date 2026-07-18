@@ -57,7 +57,7 @@ export default function FrameworkSectionBlockEditor({
           <select
             value={content.icon ?? 'Shield'}
             onChange={(e) => onChange({ ...content, icon: e.target.value })}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
           >
             {SECTION_ICONS.map((icon) => (
               <option key={icon} value={icon}>{icon}</option>
@@ -71,7 +71,7 @@ export default function FrameworkSectionBlockEditor({
           <select
             value={content.variant ?? 'light'}
             onChange={(e) => onChange({ ...content, variant: e.target.value as 'light' | 'shaded' })}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
           >
             <option value="light">Light (white section)</option>
             <option value="shaded">Shaded (gray section, white cards)</option>
@@ -85,7 +85,7 @@ export default function FrameworkSectionBlockEditor({
           type="text"
           value={content.heading ?? ''}
           onChange={(e) => onChange({ ...content, heading: e.target.value })}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+          className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
         />
       </div>
 
@@ -97,7 +97,7 @@ export default function FrameworkSectionBlockEditor({
           type="text"
           value={content.subtitle ?? ''}
           onChange={(e) => onChange({ ...content, subtitle: e.target.value })}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+          className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
         />
       </div>
 
@@ -107,7 +107,7 @@ export default function FrameworkSectionBlockEditor({
           value={content.body ?? ''}
           onChange={(e) => onChange({ ...content, body: e.target.value })}
           rows={4}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400 resize-none"
+          className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400 resize-none"
         />
       </div>
 
@@ -124,14 +124,14 @@ export default function FrameworkSectionBlockEditor({
                   value={pillar.number}
                   onChange={(e) => updatePillar(i, 'number', e.target.value)}
                   placeholder="No."
-                  className="w-14 px-2 py-1.5 border border-gray-300 rounded-lg font-arial text-sm text-center focus:outline-none focus:border-navy-400"
+                  className="w-14 px-2 py-1.5 border border-gray-300 rounded-lg font-arial text-sm text-center focus:outline-none focus:border-charcoal-400"
                 />
                 <input
                   type="text"
                   value={pillar.name}
                   onChange={(e) => updatePillar(i, 'name', e.target.value)}
                   placeholder="Pillar name"
-                  className="flex-1 px-3 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+                  className="flex-1 px-3 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
                 />
                 <button
                   onClick={() => removePillar(i)}
@@ -146,14 +146,14 @@ export default function FrameworkSectionBlockEditor({
                 onChange={(e) => updatePillar(i, 'description', e.target.value)}
                 placeholder="Pillar description"
                 rows={2}
-                className="w-full px-3 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400 resize-none"
+                className="w-full px-3 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400 resize-none"
               />
             </div>
           ))}
         </div>
         <button
           onClick={addPillar}
-          className="mt-2 flex items-center gap-1 text-xs text-navy-500 hover:underline font-arial"
+          className="mt-2 flex items-center gap-1 text-xs text-charcoal-500 hover:underline font-arial"
         >
           <Plus size={12} /> Add pillar
         </button>
@@ -168,7 +168,7 @@ export default function FrameworkSectionBlockEditor({
             type="text"
             value={content.download_label ?? ''}
             onChange={(e) => onChange({ ...content, download_label: e.target.value })}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
           />
         </div>
         <div>
@@ -180,7 +180,7 @@ export default function FrameworkSectionBlockEditor({
             value={content.download_url ?? ''}
             onChange={(e) => onChange({ ...content, download_url: e.target.value })}
             placeholder="/your-file.html"
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
           />
           <p className="font-arial text-[11px] text-gray-400 mt-1">
             Path to a file already uploaded to your site, not a page.

@@ -43,7 +43,7 @@ export default function StatBarBlockEditor({ content, onChange }: StatBarBlockEd
           type="text"
           value={content.label ?? ''}
           onChange={(e) => onChange({ ...content, label: e.target.value })}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+          className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
         />
       </div>
 
@@ -68,7 +68,7 @@ export default function StatBarBlockEditor({ content, onChange }: StatBarBlockEd
                   value={stat.value}
                   onChange={(e) => updateStat(i, 'value', e.target.value)}
                   placeholder="e.g. 9"
-                  className="w-full px-2 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+                  className="w-full px-2 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
                 />
               </div>
               <div>
@@ -78,7 +78,7 @@ export default function StatBarBlockEditor({ content, onChange }: StatBarBlockEd
                   value={stat.label}
                   onChange={(e) => updateStat(i, 'label', e.target.value)}
                   placeholder="e.g. Long-term Clients"
-                  className="w-full px-2 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+                  className="w-full px-2 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
                 />
               </div>
               <div>
@@ -88,7 +88,7 @@ export default function StatBarBlockEditor({ content, onChange }: StatBarBlockEd
                   value={stat.detail}
                   onChange={(e) => updateStat(i, 'detail', e.target.value)}
                   placeholder="e.g. UN agencies, bilateral"
-                  className="w-full px-2 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+                  className="w-full px-2 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
                 />
               </div>
             </div>
@@ -96,7 +96,7 @@ export default function StatBarBlockEditor({ content, onChange }: StatBarBlockEd
         </div>
         <button
           onClick={addStat}
-          className="mt-2 flex items-center gap-1 text-xs text-navy-500 hover:underline font-arial"
+          className="mt-2 flex items-center gap-1 text-xs text-charcoal-500 hover:underline font-arial"
         >
           <Plus size={12} /> Add stat
         </button>

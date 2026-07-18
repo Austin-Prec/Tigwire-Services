@@ -26,13 +26,13 @@ export default function CredentialsPanelBlock({ content }: CredentialsPanelBlock
           {content.panels.map((panel, i) => (
             <div
               key={i}
-              className="rounded-xl border border-gray-200 bg-gray-50 p-5 transition-all duration-300 hover:border-transparent hover:shadow-[0_16px_32px_-16px_rgba(21,42,74,0.2)]"
+              className="rounded-xl border border-gray-200 bg-gray-50 p-5 transition-all duration-300 hover:border-transparent hover:shadow-[0_16px_32px_-16px_rgba(21, 24, 26,0.2)]"
             >
               <p className="font-arial text-gray-400 text-xs uppercase tracking-wider mb-2">
                 {panel.heading}
               </p>
               {panel.fields.map((field, j) => (
-                <p key={j} className="font-arial text-navy-600 text-sm">
+                <p key={j} className="font-arial text-charcoal-600 text-sm">
                   <span className="text-gray-400">{field.label}:</span> {field.value}
                 </p>
               ))}

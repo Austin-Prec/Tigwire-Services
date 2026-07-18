@@ -59,7 +59,7 @@ export default function CaseStudyGridBlockEditor({
           value={content.intro_note ?? ''}
           onChange={(e) => onChange({ ...content, intro_note: e.target.value })}
           rows={2}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400 resize-none"
+          className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400 resize-none"
         />
       </div>
 
@@ -102,12 +102,12 @@ export default function CaseStudyGridBlockEditor({
                         value={study.category}
                         onChange={(e) => updateStudy(i, 'category', e.target.value)}
                         placeholder="Category, e.g. Office Cleaning"
-                        className="px-3 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+                        className="px-3 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
                       />
                       <select
                         value={study.icon}
                         onChange={(e) => updateStudy(i, 'icon', e.target.value)}
-                        className="px-2 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+                        className="px-2 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
                       >
                         {STUDY_ICONS.map((icon) => (
                           <option key={icon} value={icon}>{icon}</option>
@@ -121,7 +121,7 @@ export default function CaseStudyGridBlockEditor({
                         value={study.situation}
                         onChange={(e) => updateStudy(i, 'situation', e.target.value)}
                         rows={2}
-                        className="w-full px-3 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400 resize-none"
+                        className="w-full px-3 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400 resize-none"
                       />
                     </div>
                     <div>
@@ -130,7 +130,7 @@ export default function CaseStudyGridBlockEditor({
                         value={study.approach}
                         onChange={(e) => updateStudy(i, 'approach', e.target.value)}
                         rows={2}
-                        className="w-full px-3 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400 resize-none"
+                        className="w-full px-3 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400 resize-none"
                       />
                     </div>
                     <div>
@@ -139,7 +139,7 @@ export default function CaseStudyGridBlockEditor({
                         value={study.expect}
                         onChange={(e) => updateStudy(i, 'expect', e.target.value)}
                         rows={2}
-                        className="w-full px-3 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400 resize-none"
+                        className="w-full px-3 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400 resize-none"
                       />
                     </div>
                   </div>
@@ -150,7 +150,7 @@ export default function CaseStudyGridBlockEditor({
         </div>
         <button
           onClick={addStudy}
-          className="mt-2 flex items-center gap-1 text-xs text-navy-500 hover:underline font-arial"
+          className="mt-2 flex items-center gap-1 text-xs text-charcoal-500 hover:underline font-arial"
         >
           <Plus size={12} /> Add scenario
         </button>

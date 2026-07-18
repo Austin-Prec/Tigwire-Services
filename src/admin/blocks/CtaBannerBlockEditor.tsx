@@ -27,7 +27,7 @@ export default function CtaBannerBlockEditor({ content, onChange }: CtaBannerBlo
           value={content.body ?? ''}
           onChange={(e) => onChange({ ...content, body: e.target.value })}
           rows={3}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400 resize-none"
+          className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400 resize-none"
         />
       </div>
       <div className="grid grid-cols-2 gap-3">
@@ -39,7 +39,7 @@ export default function CtaBannerBlockEditor({ content, onChange }: CtaBannerBlo
             type="text"
             value={content.button_label ?? ''}
             onChange={(e) => onChange({ ...content, button_label: e.target.value })}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
           />
         </div>
         <div>
@@ -49,7 +49,7 @@ export default function CtaBannerBlockEditor({ content, onChange }: CtaBannerBlo
           <select
             value={content.button_link ?? '/contact'}
             onChange={(e) => onChange({ ...content, button_link: e.target.value })}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
           >
             {SITE_PAGES.map((p) => (
               <option key={p.value} value={p.value}>{p.label}</option>

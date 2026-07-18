@@ -30,9 +30,9 @@ export default function CaseStudyGridBlock({ content }: CaseStudyGridBlockProps)
 
       <div className="relative container-main px-6 lg:px-20">
         {content.intro_note && (
-          <div className="flex items-start gap-3 rounded-xl bg-navy-50 border border-navy-100 p-5 mb-12 max-w-3xl">
-            <Info size={18} className="text-navy-400 shrink-0 mt-0.5" />
-            <p className="font-arial text-navy-600 text-sm leading-relaxed">
+          <div className="flex items-start gap-3 rounded-xl bg-charcoal-50 border border-charcoal-100 p-5 mb-12 max-w-3xl">
+            <Info size={18} className="text-charcoal-400 shrink-0 mt-0.5" />
+            <p className="font-arial text-charcoal-600 text-sm leading-relaxed">
               {content.intro_note}
             </p>
           </div>
@@ -72,7 +72,7 @@ function CaseStudyCard({ study, index }: { study: Scenario; index: number }) {
   return (
     <div
       ref={ref}
-      className={`rounded-2xl border border-gray-200 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-transparent hover:shadow-[0_30px_60px_-15px_rgba(21,42,74,0.3),inset_0_1px_0_rgba(255,255,255,0.6)] ${
+      className={`rounded-2xl border border-gray-200 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-transparent hover:shadow-[0_30px_60px_-15px_rgba(21, 24, 26,0.3),inset_0_1px_0_rgba(255,255,255,0.6)] ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
       }`}
       style={{ transitionDelay: isVisible ? `${index * 100}ms` : '0ms' }}
@@ -88,22 +88,22 @@ function CaseStudyCard({ study, index }: { study: Scenario; index: number }) {
 
       <div className="space-y-4">
         <div>
-          <p className="font-arial text-navy-500 text-xs font-semibold uppercase tracking-wide mb-1.5">
+          <p className="font-arial text-charcoal-500 text-xs font-semibold uppercase tracking-wide mb-1.5">
             Situation
           </p>
           <p className="font-arial text-gray-600 text-sm leading-relaxed">{study.situation}</p>
         </div>
         <div>
-          <p className="font-arial text-navy-500 text-xs font-semibold uppercase tracking-wide mb-1.5">
+          <p className="font-arial text-charcoal-500 text-xs font-semibold uppercase tracking-wide mb-1.5">
             Our Approach
           </p>
           <p className="font-arial text-gray-600 text-sm leading-relaxed">{study.approach}</p>
         </div>
         <div className="pt-3 border-t border-gray-100">
-          <p className="font-arial text-navy-500 text-xs font-semibold uppercase tracking-wide mb-1.5">
+          <p className="font-arial text-charcoal-500 text-xs font-semibold uppercase tracking-wide mb-1.5">
             What to Expect
           </p>
-          <p className="font-arial text-navy-600 text-sm font-medium leading-relaxed">
+          <p className="font-arial text-charcoal-600 text-sm font-medium leading-relaxed">
             {study.expect}
           </p>
         </div>

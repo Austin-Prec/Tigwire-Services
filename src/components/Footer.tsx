@@ -25,9 +25,9 @@ export default function Footer() {
   return (
     <footer
       ref={ref}
-      className="relative text-navy-100 overflow-hidden"
+      className="relative text-charcoal-100 overflow-hidden"
       style={{
-        background: 'radial-gradient(ellipse at top right, #101F38 0%, #0B1626 45%, #060D17 100%)',
+        background: 'radial-gradient(ellipse at top right, #101214 0%, #0B0C0E 45%, #060708 100%)',
       }}
     >
       <div
@@ -47,26 +47,26 @@ export default function Footer() {
             Update the "Malawian-Owned" and "Eco-Friendly" badges only if
             they stop being accurate; the other two are Year One targets,
             not achieved results, and are labelled that way deliberately. */}
-        <div className="border-b border-navy-600 pb-8 mb-8">
+        <div className="border-b border-charcoal-600 pb-8 mb-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="group rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-md px-4 py-5 text-center transition-all duration-300 hover:bg-white/[0.07] hover:border-white/20 hover:-translate-y-1">
               <MapPin size={28} className="text-clay-200 mx-auto mb-2 transition-transform duration-300 group-hover:scale-110" strokeWidth={1.2} />
-              <p className="font-arial text-navy-200 text-xs uppercase tracking-wider">Malawian-Owned</p>
+              <p className="font-arial text-charcoal-200 text-xs uppercase tracking-wider">Malawian-Owned</p>
               <p className="font-arial text-white text-sm font-medium">Lilongwe Based</p>
             </div>
             <div className="group rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-md px-4 py-5 text-center transition-all duration-300 hover:bg-white/[0.07] hover:border-white/20 hover:-translate-y-1">
               <Globe size={28} className="text-clay-200 mx-auto mb-2 transition-transform duration-300 group-hover:scale-110" strokeWidth={1.2} />
-              <p className="font-arial text-navy-200 text-xs uppercase tracking-wider">Products</p>
+              <p className="font-arial text-charcoal-200 text-xs uppercase tracking-wider">Products</p>
               <p className="font-arial text-white text-sm font-medium">Eco-Friendly</p>
             </div>
             <div className="group rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-md px-4 py-5 text-center transition-all duration-300 hover:bg-white/[0.07] hover:border-white/20 hover:-translate-y-1">
               <Users size={28} className="text-clay-200 mx-auto mb-2 transition-transform duration-300 group-hover:scale-110" strokeWidth={1.2} />
-              <p className="font-arial text-navy-200 text-xs uppercase tracking-wider">Our Goal</p>
+              <p className="font-arial text-charcoal-200 text-xs uppercase tracking-wider">Our Goal</p>
               <p className="font-arial text-white text-sm font-medium">90%+ Satisfaction</p>
             </div>
             <div className="group rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-md px-4 py-5 text-center transition-all duration-300 hover:bg-white/[0.07] hover:border-white/20 hover:-translate-y-1">
               <Shield size={28} className="text-clay-200 mx-auto mb-2 transition-transform duration-300 group-hover:scale-110" strokeWidth={1.2} />
-              <p className="font-arial text-navy-200 text-xs uppercase tracking-wider">Emergency</p>
+              <p className="font-arial text-charcoal-200 text-xs uppercase tracking-wider">Emergency</p>
               <p className="font-arial text-white text-sm font-medium">24/7 Available</p>
             </div>
           </div>
@@ -78,7 +78,7 @@ export default function Footer() {
             <h3 className="font-garamond text-white text-xl font-semibold mb-4">
               Tigwire Services
             </h3>
-            <p className="font-arial text-sm leading-relaxed text-navy-200 max-w-md">
+            <p className="font-arial text-sm leading-relaxed text-charcoal-200 max-w-md">
               Professional cleaning services for homes, offices, schools,
               hotels, and banks across Malawi. Reliable, affordable, and
               environmentally responsible.
@@ -102,7 +102,7 @@ export default function Footer() {
                 <li key={link.to}>
                   <Link
                     to={link.to}
-                    className="group inline-flex items-center gap-1.5 font-arial text-sm text-navy-200 transition-colors duration-200 hover:text-clay-200"
+                    className="group inline-flex items-center gap-1.5 font-arial text-sm text-charcoal-200 transition-colors duration-200 hover:text-clay-200"
                   >
                     <span className="h-px w-0 bg-clay-200 transition-all duration-300 group-hover:w-2.5" />
                     {link.label}
@@ -121,7 +121,7 @@ export default function Footer() {
                 <Mail size={16} className="text-clay-200 mt-0.5 shrink-0" />
                 <a
                   href="mailto:rachealkamaseko7@gmail.com"
-                  className="font-arial text-sm text-navy-200 hover:text-clay-200 transition-colors duration-200"
+                  className="font-arial text-sm text-charcoal-200 hover:text-clay-200 transition-colors duration-200"
                 >
                   rachealkamaseko7@gmail.com
                 </a>
@@ -130,14 +130,14 @@ export default function Footer() {
                 <Phone size={16} className="text-clay-200 mt-0.5 shrink-0" />
                 <a
                   href="tel:+265992477611"
-                  className="font-arial text-sm text-navy-200 hover:text-clay-200 transition-colors duration-200"
+                  className="font-arial text-sm text-charcoal-200 hover:text-clay-200 transition-colors duration-200"
                 >
                   +265 992 477 611
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="text-clay-200 mt-0.5 shrink-0" />
-                <span className="font-arial text-sm text-navy-200">
+                <span className="font-arial text-sm text-charcoal-200">
                   Area 18B, Lilongwe
                 </span>
               </li>
@@ -151,8 +151,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-navy-600 pt-6">
-          <p className="font-arial text-xs text-navy-300 text-center">
+        <div className="border-t border-charcoal-600 pt-6">
+          <p className="font-arial text-xs text-charcoal-300 text-center">
             &copy; 2026 Tigwire Services. All rights reserved.
           </p>
           {/* No registration/incorporation line here deliberately: the

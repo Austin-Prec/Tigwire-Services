@@ -33,7 +33,7 @@ export default function StatBarBlock({ content }: StatBarBlockProps) {
     <section
       className="relative py-16 md:py-24 overflow-hidden"
       style={{
-        background: 'radial-gradient(ellipse at top right, #25406B 0%, #152A4A 45%, #0B1626 100%)',
+        background: 'radial-gradient(ellipse at top right, #33383B 0%, #15181A 45%, #0B0C0E 100%)',
       }}
     >
       <div
@@ -45,7 +45,7 @@ export default function StatBarBlock({ content }: StatBarBlockProps) {
       <div className="relative container-main px-6 lg:px-20">
         {content.label && (
           <div className="text-center mb-10">
-            <p className="font-arial text-navy-100 text-sm uppercase tracking-wider">
+            <p className="font-arial text-charcoal-100 text-sm uppercase tracking-wider">
               {content.label}
             </p>
           </div>
@@ -108,15 +108,15 @@ function StatItem({ stat, index }: { stat: Stat; index: number }) {
       className="rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-md px-5 py-6 text-center transition-all duration-300 hover:bg-white/[0.07] hover:border-white/20 hover:-translate-y-1"
     >
       <div
-        className="font-garamond text-clay-200 text-3xl md:text-4xl font-semibold mb-1 tabular-nums animate-fade-up"
+        className="font-garamond text-clay-200 text-3xl md:text-4xl font-semibold tracking-tight mb-1 tabular-nums animate-fade-up"
         style={{ animationDelay: `${index * 100}ms` }}
       >
         {displayValue}
       </div>
-      <div className="font-arial text-navy-100 text-xs uppercase tracking-wider mb-1">
+      <div className="font-arial text-charcoal-100 text-xs uppercase tracking-wider mb-1">
         {stat.label}
       </div>
-      <div className="font-arial text-navy-200 text-[11px]">
+      <div className="font-arial text-charcoal-200 text-[11px]">
         {stat.detail}
       </div>
     </div>

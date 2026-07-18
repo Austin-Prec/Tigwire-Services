@@ -58,7 +58,7 @@ export default function BioBlockEditor({ content, onChange }: BioBlockEditorProp
             type="text"
             value={content.name ?? ''}
             onChange={(e) => onChange({ ...content, name: e.target.value })}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
           />
         </div>
         <div>
@@ -67,7 +67,7 @@ export default function BioBlockEditor({ content, onChange }: BioBlockEditorProp
             type="text"
             value={content.title ?? ''}
             onChange={(e) => onChange({ ...content, title: e.target.value })}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
           />
         </div>
       </div>
@@ -80,7 +80,7 @@ export default function BioBlockEditor({ content, onChange }: BioBlockEditorProp
           value={content.quote ?? ''}
           onChange={(e) => onChange({ ...content, quote: e.target.value })}
           rows={2}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400 resize-none"
+          className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400 resize-none"
         />
       </div>
 
@@ -95,7 +95,7 @@ export default function BioBlockEditor({ content, onChange }: BioBlockEditorProp
                 <button
                   onClick={() => wrapSelectionInBold(i)}
                   title="Bold selected text"
-                  className="p-1 text-gray-500 hover:bg-navy-50 hover:text-navy-500 rounded transition-colors"
+                  className="p-1 text-gray-500 hover:bg-charcoal-50 hover:text-charcoal-500 rounded transition-colors"
                 >
                   <Bold size={13} />
                 </button>
@@ -120,7 +120,7 @@ export default function BioBlockEditor({ content, onChange }: BioBlockEditorProp
         </div>
         <button
           onClick={addParagraph}
-          className="mt-2 flex items-center gap-1 text-xs text-navy-500 hover:underline font-arial"
+          className="mt-2 flex items-center gap-1 text-xs text-charcoal-500 hover:underline font-arial"
         >
           <Plus size={12} /> Add paragraph
         </button>
@@ -134,7 +134,7 @@ export default function BioBlockEditor({ content, onChange }: BioBlockEditorProp
           type="text"
           value={content.footnote ?? ''}
           onChange={(e) => onChange({ ...content, footnote: e.target.value })}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+          className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
         />
       </div>
     </div>

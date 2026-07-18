@@ -59,7 +59,7 @@ export default function PricingNotesBlockEditor({ content, onChange }: PricingNo
           type="text"
           value={content.heading ?? ''}
           onChange={(e) => onChange({ ...content, heading: e.target.value })}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+          className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
         />
       </div>
 
@@ -76,7 +76,7 @@ export default function PricingNotesBlockEditor({ content, onChange }: PricingNo
                     wrapSelectionInBold({ current: itemRefs.current[i] }, (next) => updateItem(i, next))
                   }
                   title="Bold selected text"
-                  className="p-1 text-gray-500 hover:bg-navy-50 hover:text-navy-500 rounded transition-colors"
+                  className="p-1 text-gray-500 hover:bg-charcoal-50 hover:text-charcoal-500 rounded transition-colors"
                 >
                   <Bold size={13} />
                 </button>
@@ -101,7 +101,7 @@ export default function PricingNotesBlockEditor({ content, onChange }: PricingNo
         </div>
         <button
           onClick={addItem}
-          className="mt-2 flex items-center gap-1 text-xs text-navy-500 hover:underline font-arial"
+          className="mt-2 flex items-center gap-1 text-xs text-charcoal-500 hover:underline font-arial"
         >
           <Plus size={12} /> Add note
         </button>
@@ -117,7 +117,7 @@ export default function PricingNotesBlockEditor({ content, onChange }: PricingNo
               wrapSelectionInBold(noteRef, (next) => onChange({ ...content, framework_note: next }))
             }
             title="Bold selected text"
-            className="p-1 text-gray-500 hover:bg-navy-50 hover:text-navy-500 rounded transition-colors"
+            className="p-1 text-gray-500 hover:bg-charcoal-50 hover:text-charcoal-500 rounded transition-colors"
           >
             <Bold size={13} />
           </button>
@@ -127,7 +127,7 @@ export default function PricingNotesBlockEditor({ content, onChange }: PricingNo
           value={content.framework_note ?? ''}
           onChange={(e) => onChange({ ...content, framework_note: e.target.value })}
           rows={2}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400 resize-none"
+          className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400 resize-none"
         />
       </div>
     </div>

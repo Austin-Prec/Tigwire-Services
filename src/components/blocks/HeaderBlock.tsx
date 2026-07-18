@@ -23,7 +23,7 @@ export default function HeaderBlock({ content }: HeaderBlockProps) {
     <section
       className="relative pt-28 pb-16 md:pt-36 md:pb-20 overflow-hidden"
       style={{
-        background: 'radial-gradient(ellipse at top right, #25406B 0%, #152A4A 45%, #0B1626 100%)',
+        background: 'radial-gradient(ellipse at top right, #33383B 0%, #15181A 45%, #0B0C0E 100%)',
       }}
     >
       <div
@@ -38,11 +38,11 @@ export default function HeaderBlock({ content }: HeaderBlockProps) {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
         }`}
       >
-        <h1 className="font-garamond text-white text-3xl md:text-4xl lg:text-5xl font-semibold mb-4">
+        <h1 className="font-garamond text-white text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight mb-4">
           {content.title}
         </h1>
         {content.intro && (
-          <p className="font-arial text-navy-100 text-base md:text-lg leading-relaxed max-w-3xl">
+          <p className="font-arial text-charcoal-100 text-base md:text-lg leading-relaxed max-w-3xl">
             {content.intro}
           </p>
         )}

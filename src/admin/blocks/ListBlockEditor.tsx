@@ -43,7 +43,7 @@ export default function ListBlockEditor({ content, onChange }: ListBlockEditorPr
             value={content.title ?? ''}
             onChange={(e) => onChange({ ...content, title: e.target.value })}
             placeholder="e.g. Certifications"
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
           />
         </div>
         <div>
@@ -51,7 +51,7 @@ export default function ListBlockEditor({ content, onChange }: ListBlockEditorPr
           <select
             value={content.icon ?? 'Award'}
             onChange={(e) => onChange({ ...content, icon: e.target.value })}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
           >
             {LIST_ICONS.map((icon) => (
               <option key={icon} value={icon}>{icon}</option>
@@ -69,7 +69,7 @@ export default function ListBlockEditor({ content, onChange }: ListBlockEditorPr
                 type="text"
                 value={item}
                 onChange={(e) => updateItem(i, e.target.value)}
-                className="flex-1 px-3 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+                className="flex-1 px-3 py-1.5 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
               />
               <button
                 onClick={() => removeItem(i)}
@@ -83,7 +83,7 @@ export default function ListBlockEditor({ content, onChange }: ListBlockEditorPr
         </div>
         <button
           onClick={addItem}
-          className="mt-2 flex items-center gap-1 text-xs text-navy-500 hover:underline font-arial"
+          className="mt-2 flex items-center gap-1 text-xs text-charcoal-500 hover:underline font-arial"
         >
           <Plus size={12} /> Add item
         </button>
@@ -97,7 +97,7 @@ export default function ListBlockEditor({ content, onChange }: ListBlockEditorPr
           type="text"
           value={content.footnote ?? ''}
           onChange={(e) => onChange({ ...content, footnote: e.target.value })}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+          className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
         />
       </div>
     </div>

@@ -34,8 +34,8 @@ export default function Navbar() {
         <nav
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
                 isScrolled
-                    ? 'bg-navy-500/85 backdrop-blur-md shadow-[0_4px_24px_rgba(7,12,19,0.15),inset_0_1px_0_rgba(255,255,255,0.06)]'
-                    : 'bg-navy-500/60 backdrop-blur-sm'
+                    ? 'bg-charcoal-500/85 backdrop-blur-md shadow-[0_4px_24px_rgba(7,12,19,0.15),inset_0_1px_0_rgba(255,255,255,0.06)]'
+                    : 'bg-charcoal-500/60 backdrop-blur-sm'
             }`}
         >
             <div className="container-fluid px-6 py-4">
@@ -71,7 +71,7 @@ export default function Navbar() {
                         })}
                         <Link
                             to="/contact"
-                            className="ml-3 rounded-lg bg-gradient-to-br from-clay-100 to-clay-200 px-5 py-2.5 font-arial text-sm font-semibold text-navy-600 shadow-[0_4px_16px_rgba(181,117,74,0.3),inset_0_1px_0_rgba(255,255,255,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(181,117,74,0.45),inset_0_1px_0_rgba(255,255,255,0.4)]"
+                            className="ml-3 rounded-lg bg-gradient-to-br from-clay-100 to-clay-200 px-5 py-2.5 font-arial text-sm font-semibold text-charcoal-600 shadow-[0_4px_16px_rgba(181,117,74,0.3),inset_0_1px_0_rgba(255,255,255,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(181,117,74,0.45),inset_0_1px_0_rgba(255,255,255,0.4)]"
                         >
                             Get a Free Quote
                         </Link>
@@ -106,7 +106,7 @@ export default function Navbar() {
                         <Link
                             to="/contact"
                             onClick={() => setMobileOpen(false)}
-                            className="mt-2 rounded-lg bg-gradient-to-br from-clay-100 to-clay-200 px-4 py-3 text-center font-arial text-sm font-semibold text-navy-600 shadow-[0_4px_16px_rgba(181,117,74,0.3),inset_0_1px_0_rgba(255,255,255,0.4)]"
+                            className="mt-2 rounded-lg bg-gradient-to-br from-clay-100 to-clay-200 px-4 py-3 text-center font-arial text-sm font-semibold text-charcoal-600 shadow-[0_4px_16px_rgba(181,117,74,0.3),inset_0_1px_0_rgba(255,255,255,0.4)]"
                         >
                             Get a Free Quote
                         </Link>

@@ -19,8 +19,8 @@ export default function RequireAuth({ children }: { children: React.ReactNode })
   // undefined = still checking, avoid a flash-redirect to /admin/login
   if (session === undefined) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-navy-500">
-        <p className="font-arial text-navy-200 text-sm">Loading…</p>
+      <div className="min-h-screen flex items-center justify-center bg-charcoal-500">
+        <p className="font-arial text-charcoal-200 text-sm">Loading…</p>
       </div>
     );
   }

@@ -122,23 +122,23 @@ export default function Editor() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <header className="bg-navy-500 px-6 py-5 md:px-10 sticky top-0 z-10">
+      <header className="bg-charcoal-500 px-6 py-5 md:px-10 sticky top-0 z-10">
         <div className="max-w-4xl mx-auto flex items-center justify-between gap-4">
           <button
             onClick={() => navigate('/admin')}
-            className="flex items-center gap-2 text-navy-200 hover:text-white text-sm font-arial transition-colors shrink-0"
+            className="flex items-center gap-2 text-charcoal-200 hover:text-white text-sm font-arial transition-colors shrink-0"
           >
             <ArrowLeft size={16} /> Back
           </button>
 
           <div className="flex items-center gap-3">
             {savedMessage && (
-              <span className="font-arial text-xs text-navy-200">{savedMessage}</span>
+              <span className="font-arial text-xs text-charcoal-200">{savedMessage}</span>
             )}
             <button
               onClick={() => save('draft')}
               disabled={isSavingDraft || isPublishing}
-              className="px-4 py-2 border border-navy-300 text-navy-100 rounded-lg font-arial text-sm font-semibold hover:bg-navy-400 transition-colors disabled:opacity-50"
+              className="px-4 py-2 border border-charcoal-300 text-charcoal-100 rounded-lg font-arial text-sm font-semibold hover:bg-charcoal-400 transition-colors disabled:opacity-50"
             >
               {isSavingDraft ? 'Saving…' : 'Save draft'}
             </button>
@@ -169,7 +169,7 @@ export default function Editor() {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Post title"
-          className="w-full font-garamond text-3xl md:text-4xl font-bold text-navy-500 placeholder:text-gray-300 focus:outline-none mb-4 bg-transparent"
+          className="w-full font-garamond text-3xl md:text-4xl font-bold text-charcoal-500 placeholder:text-gray-300 focus:outline-none mb-4 bg-transparent"
         />
 
         <textarea
@@ -197,7 +197,7 @@ export default function Editor() {
             <button
               onClick={() => coverInputRef.current?.click()}
               disabled={isUploadingCover}
-              className="w-full h-32 border-2 border-dashed border-gray-300 rounded-lg flex flex-col items-center justify-center gap-2 text-gray-400 hover:border-navy-300 hover:text-navy-400 transition-colors disabled:opacity-60"
+              className="w-full h-32 border-2 border-dashed border-gray-300 rounded-lg flex flex-col items-center justify-center gap-2 text-gray-400 hover:border-charcoal-300 hover:text-charcoal-400 transition-colors disabled:opacity-60"
             >
               <ImagePlus size={22} />
               <span className="font-arial text-sm">
@@ -224,7 +224,7 @@ export default function Editor() {
             <select
               value={category}
               onChange={(e) => setCategory(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
             >
               {CATEGORIES.map((c) => (
                 <option key={c} value={c}>{c}</option>
@@ -236,7 +236,7 @@ export default function Editor() {
             <select
               value={icon}
               onChange={(e) => setIcon(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
             >
               {ICONS.map((i) => (
                 <option key={i} value={i}>{i}</option>
@@ -250,7 +250,7 @@ export default function Editor() {
               value={readTime}
               onChange={(e) => setReadTime(e.target.value)}
               placeholder="4 min read"
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-navy-400"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg font-arial text-sm focus:outline-none focus:border-charcoal-400"
             />
           </Field>
         </div>

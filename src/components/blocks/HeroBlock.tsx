@@ -44,7 +44,7 @@ export default function HeroBlock({ content }: HeroBlockProps) {
       className="relative min-h-[92vh] flex items-center overflow-hidden"
       style={{
         background:
-          'radial-gradient(ellipse at top right, #25406B 0%, #152A4A 45%, #0B1626 100%)',
+          'radial-gradient(ellipse at top right, #33383B 0%, #15181A 45%, #0B0C0E 100%)',
       }}
     >
       {/* Optional editable background photo, kept at the same very low
@@ -88,7 +88,7 @@ export default function HeroBlock({ content }: HeroBlockProps) {
             )}
 
             {content.headline && (
-              <h1 className="font-garamond text-white text-4xl md:text-5xl lg:text-[3.4rem] font-semibold leading-[1.12] mb-6">
+              <h1 className="font-garamond text-white text-4xl md:text-5xl lg:text-[3.4rem] font-semibold tracking-tight leading-[1.12] mb-6">
                 {content.headline}
               </h1>
             )}
@@ -111,7 +111,7 @@ export default function HeroBlock({ content }: HeroBlockProps) {
                   <Link
                     key={i}
                     to={btn.link}
-                    className="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-br from-clay-100 to-clay-200 px-8 py-4 font-arial text-[15px] font-bold text-navy-600 shadow-[0_10px_30px_-6px_rgba(181,117,74,0.5)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]"
+                    className="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-br from-clay-100 to-clay-200 px-8 py-4 font-arial text-[15px] font-bold text-charcoal-600 shadow-[0_10px_30px_-6px_rgba(181,117,74,0.5)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]"
                     style={{ boxShadow: '0 10px 30px -6px rgba(181,117,74,0.5), inset 0 1px 0 rgba(255,255,255,0.4)' }}
                   >
                     {btn.label}

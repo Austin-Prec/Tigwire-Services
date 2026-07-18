@@ -4,26 +4,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Dark blue — same structural role the old navy scale played
-        // (headings, hero/footer gradients, primary text on light
-        // surfaces), retuned slightly cooler and a touch deeper.
-        navy: {
-          DEFAULT: '#152A4A',
-          50: '#E7EBF2',
-          100: '#C2CCDE',
-          200: '#8598B8',
-          300: '#4C6389',
-          400: '#25406B',
-          500: '#152A4A',
-          600: '#101F38',
-          700: '#0B1626',
-          800: '#060D17',
-          900: '#02060B',
-        },
-        // Near-black — used where the old palette used pure black-ish
-        // tones (deepest gradient stops, high-contrast text). Kept as
-        // its own scale rather than folding into navy-900, since a
-        // true near-black reads differently than a very dark blue.
+        // Black (near-black, not pure #000) — now the DOMINANT structural
+        // color: headings, primary text, backgrounds, nav bar, footer.
+        // Kept slightly off pure black (a faint warm undertone) since true
+        // #000000 crushes shadow detail and reads harshly at this much
+        // larger footprint (full sections, not just accents).
         charcoal: {
           DEFAULT: '#15181A',
           50: '#EAEBEC',
@@ -36,6 +21,23 @@ export default {
           700: '#0B0C0E',
           800: '#060708',
           900: '#020202',
+        },
+        // Dark blue — now the COMPLEMENTARY accent, reintroduced
+        // deliberately in specific spots (badges, secondary buttons,
+        // gradient undertones, hover/active states) rather than carrying
+        // every structural role the way it did before this retheme.
+        navy: {
+          DEFAULT: '#152A4A',
+          50: '#E7EBF2',
+          100: '#C2CCDE',
+          200: '#8598B8',
+          300: '#4C6389',
+          400: '#25406B',
+          500: '#152A4A',
+          600: '#101F38',
+          700: '#0B1626',
+          800: '#060D17',
+          900: '#02060B',
         },
         // Sage green — primary accent, replacing crimson in every role
         // crimson used to play (CTAs, links, active states, icon tints).
@@ -71,7 +73,12 @@ export default {
         },
       },
       fontFamily: {
-        garamond: ['Garamond', 'EB Garamond', 'Georgia', 'serif'],
+        // Tailwind class name kept as "garamond" for backward compatibility
+        // with every component already using font-garamond -- only the
+        // actual stack changed, from a serif (EB Garamond) to a geometric
+        // sans (Space Grotesk), to match the black-led retheme's more
+        // structured, architectural direction.
+        garamond: ['Space Grotesk', 'Inter', 'Arial', 'sans-serif'],
         arial: ['Inter', 'Arial', 'Helvetica', 'sans-serif'],
       },
       spacing: {
@@ -83,10 +90,10 @@ export default {
         DEFAULT: {
           css: {
             '--tw-prose-body': theme('colors.gray.600'),
-            '--tw-prose-headings': theme('colors.navy.500'),
+            '--tw-prose-headings': theme('colors.charcoal.500'),
             '--tw-prose-links': theme('colors.sage.400'),
-            '--tw-prose-bold': theme('colors.navy.500'),
-            '--tw-prose-quotes': theme('colors.navy.400'),
+            '--tw-prose-bold': theme('colors.charcoal.500'),
+            '--tw-prose-quotes': theme('colors.charcoal.400'),
             '--tw-prose-quote-borders': theme('colors.sage.200'),
             fontFamily: theme('fontFamily.arial').join(', '),
             h1: { fontFamily: theme('fontFamily.garamond').join(', ') },

@@ -22,12 +22,12 @@ export default function Insights() {
   return (
     <div>
       {/* Header */}
-      <section className="bg-navy-500 pt-28 pb-16 md:pt-36 md:pb-20">
+      <section className="bg-charcoal-500 pt-28 pb-16 md:pt-36 md:pb-20">
         <div className="container-main px-6 lg:px-20">
           <h1 className="font-garamond text-white text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             Insights
           </h1>
-          <p className="font-arial text-navy-100 text-base md:text-lg leading-relaxed max-w-3xl">
+          <p className="font-arial text-charcoal-100 text-base md:text-lg leading-relaxed max-w-3xl">
             Cleaning tips, hygiene guidance, and updates from the Tigwire
             Services team.
           </p>
@@ -57,7 +57,7 @@ export default function Insights() {
               return (
                 <div
                   key={article.id}
-                  className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 hover:border-navy-300 flex flex-col"
+                  className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 hover:border-charcoal-300 flex flex-col"
                 >
                   {article.cover_image_url ? (
                     <img
@@ -66,17 +66,17 @@ export default function Insights() {
                       className="w-full h-40 object-cover"
                     />
                   ) : (
-                    <div className="w-full h-40 bg-navy-50 flex items-center justify-center">
+                    <div className="w-full h-40 bg-charcoal-50 flex items-center justify-center">
                       <IconComponent size={32} className="text-sage-400" strokeWidth={1.5} />
                     </div>
                   )}
 
                   <div className="p-6 flex flex-col flex-1">
-                    <span className="inline-block bg-navy-50 text-navy-500 text-xs font-semibold px-2 py-1 rounded mb-3 w-fit">
+                    <span className="inline-block bg-charcoal-50 text-charcoal-500 text-xs font-semibold px-2 py-1 rounded mb-3 w-fit">
                       {article.category}
                     </span>
 
-                    <h3 className="font-garamond text-navy-500 text-xl font-bold mb-2">
+                    <h3 className="font-garamond text-charcoal-500 text-xl font-bold mb-2">
                       {article.title}
                     </h3>
 
@@ -109,8 +109,8 @@ export default function Insights() {
           </div>
 
           {/* Subscribe Section */}
-          <div className="mt-16 bg-navy-50 rounded-lg p-8 text-center">
-            <h3 className="font-garamond text-navy-500 text-2xl font-bold mb-3">
+          <div className="mt-16 bg-charcoal-50 rounded-lg p-8 text-center">
+            <h3 className="font-garamond text-charcoal-500 text-2xl font-bold mb-3">
               Subscribe to Insights
             </h3>
             <p className="font-arial text-gray-600 text-sm mb-6 max-w-lg mx-auto">
@@ -133,11 +133,11 @@ export default function Insights() {
                 name="email"
                 placeholder="Your email address"
                 required
-                className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-navy-400"
+                className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-charcoal-400"
               />
               <button
                 type="submit"
-                className="bg-navy-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-navy-700 transition-colors"
+                className="bg-charcoal-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-charcoal-700 transition-colors"
               >
                 Subscribe
               </button>
