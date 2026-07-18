@@ -132,13 +132,13 @@ export default function Footer() {
                   href="tel:+265992477611"
                   className="font-arial text-sm text-charcoal-200 hover:text-clay-200 transition-colors duration-200"
                 >
-                  +265 992 477 611
+                  +265 992 477 611 / +265 888 879 052
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="text-clay-200 mt-0.5 shrink-0" />
                 <span className="font-arial text-sm text-charcoal-200">
-                  Area 18B, Lilongwe
+                Lilongwe & Zomba
                 </span>
               </li>
             </ul>
