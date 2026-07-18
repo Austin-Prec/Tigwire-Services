@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'EB Garamond', Arial, Helvetica, sans-serif;
+    color: #1a1a1a;
+    font-size: 18px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'EB Garamond', Garamond, Georgia, serif;
+  }
+}
+
+@layer base {
+  [id^="bolt-"],
+  .bolt-badge,
+  [class*="bolt-badge"],
+  [data-bolt],
+  a[href*="bolt.new"][target="_blank"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-sage text-white px-8 py-3 font-arial text-sm tracking-wide uppercase font-semibold transition-colors duration-200 hover:bg-sage-600;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-navy text-navy px-8 py-3 font-arial text-sm tracking-wide uppercase font-semibold transition-colors duration-200 hover:bg-navy hover:text-white;
+  }
+
+  .btn-clay {
+    @apply bg-clay text-white px-8 py-3 font-arial text-sm tracking-wide uppercase font-semibold transition-colors duration-200 hover:bg-clay-600;
+  }
+
+  .section-padding {
+    @apply px-6 py-16 md:px-12 md:py-24 lg:px-20 lg:py-32;
+  }
+
+  .container-main {
+    @apply max-w-7xl mx-auto;
+  }
+}
+
+/* Move Tawk.to Chat Widget to Left Side */
+iframe[src*="tawk.to"] {
+    left: 20px !important;
+    right: auto !important;
+    bottom: 20px !important;
+}
+
+/* --- Modern motion language ---
+   Shared keyframes for the redesigned dynamic sections (hero, value cards,
+   stat bars, framework sections, service grid). Defined once here so every
+   block component reuses the same animation vocabulary instead of each
+   duplicating its own <style> block. */
+
+@keyframes grid-drift {
+  from { background-position: 0 0; }
+  to { background-position: 64px 64px; }
+}
+.animate-grid-drift {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+  animation: grid-drift 40s linear infinite;
+}
+
+@keyframes blob-float-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-40px, 40px) scale(1.15); }
+}
+@keyframes blob-float-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(50px, -30px) scale(1.1); }
+}
+.animate-blob-1 { animation: blob-float-1 12s ease-in-out infinite; }
+.animate-blob-2 { animation: blob-float-2 15s ease-in-out infinite; }
+
+@keyframes card-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+.animate-card-bob { animation: card-bob 5s ease-in-out infinite; }
+
+@keyframes badge-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(181, 117, 74, 0.6); }
+  70% { box-shadow: 0 0 0 10px rgba(181, 117, 74, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(181, 117, 74, 0); }
+}
+.animate-badge-pulse { animation: badge-pulse 2s infinite; }
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up { animation: fade-up 0.9s ease-out forwards; opacity: 0; }
+
+/* Respect users who've asked their OS to minimize motion — every animation
+   above collapses to a simple, instant appearance instead of forcing motion
+   on people who've explicitly opted out of it. */
+@media (prefers-reduced-motion: reduce) {
+  .animate-grid-drift,
+  .animate-blob-1,
+  .animate-blob-2,
+  .animate-card-bob,
+  .animate-badge-pulse {
+    animation: none;
+  }
+  .animate-fade-up {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <!-- TODO: add a real favicon.png for Tigwire to public/ -- the
+         previous one was an "A" monogram belonging to Austin Phiri
+         Advisory and has been removed, since it isn't appropriate for
+         this business. Until a new one is added, this reference points
+         at a file that doesn't exist, which browsers handle gracefully
+         (no icon shown) rather than breaking. -->
+    <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fonts: EB Garamond is the site's configured heading font
+         (tailwind.config.js fontFamily.garamond); Inter is added as the
+         modern body/UI sans, replacing the plain system Arial fallback
+         for a crisper look in body text, buttons, and badges. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Primary Title & Description for Google -->
+    <title>Tigwire Services | Professional Cleaning Services in Malawi</title>
+    <meta name="description" content="Tigwire Services provides reliable, affordable, and environmentally responsible cleaning services for homes, offices, schools, hotels, and banks across Malawi." />
+    <meta name="keywords" content="cleaning services Malawi, office cleaning Lilongwe, residential cleaning, deep cleaning, disinfection services, commercial cleaning, move-in move-out cleaning, post-construction cleaning" />
+    <meta name="author" content="Tigwire Services" />
+
+    <!-- Google Analytics: removed. The original tag (G-W46XGKRLE3) belongs
+         to Austin Phiri Advisory's analytics property, so it isn't valid
+         for this site. To add Tigwire's own, create a GA4 property at
+         https://analytics.google.com and paste its measurement ID into a
+         script block here, matching the pattern that was here before. -->
+
+    <!-- Facebook / WhatsApp / Social Media Default Meta Tags -->
+    <meta property="og:title" content="Tigwire Services" />
+    <meta property="og:description" content="Reliable, affordable, and environmentally responsible cleaning services for homes, offices, schools, hotels, and banks across Malawi." />
+    <!-- og:image intentionally omitted until a real Tigwire logo/image
+         exists at a public URL — the previous value pointed to Austin
+         Phiri Advisory's own hosted logo, which doesn't represent this
+         business. Add e.g. og:image content="https://<your-domain>/tigwire-logo.png"
+         once the site has a real domain and logo file. -->
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:title" content="Tigwire Services" />
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <style>
+        /* WhatsApp Button - Bottom Left */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: #25D366;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 9999;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+        /* Ensure chatbase stays on right */
+        iframe[src*="chatbase"] {
+            right: 20px !important;
+            left: auto !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- WhatsApp Floating Button - BOTTOM LEFT -->
+    <a href="https://wa.me/265992477611" target="_blank" class="whatsapp-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="white">
+            <path d="M12.032 2.001c-5.514 0-9.996 4.48-9.996 9.991 0 1.76.458 3.485 1.33 5.003L2 22l5.233-1.363c1.46.795 3.117 1.213 4.8 1.213 5.514 0 9.996-4.48 9.996-9.991 0-5.511-4.482-9.99-9.997-9.99zm0 18.398c-1.533 0-3.04-.412-4.363-1.19l-.313-.186-3.106.81.83-3.027-.204-.322a8.25 8.25 0 0 1-1.266-4.414c0-4.557 3.71-8.263 8.27-8.263 4.56 0 8.27 3.706 8.27 8.263 0 4.557-3.71 8.263-8.27 8.263z"/>
+            <path d="M16.75 13.825c-.26-.13-1.54-.76-1.78-.846-.24-.087-.414-.13-.588.13-.174.26-.676.846-.828 1.02-.152.174-.304.196-.564.065-.26-.13-1.096-.404-2.087-1.288-.771-.688-1.292-1.537-1.443-1.797-.152-.26-.016-.4.114-.53.117-.117.26-.304.39-.456.13-.152.174-.26.26-.434.087-.174.043-.326-.022-.456-.065-.13-.588-1.415-.805-1.937-.212-.51-.427-.44-.588-.448-.152-.008-.326-.009-.5-.009-.174 0-.456.065-.695.326-.239.26-.912.89-.912 2.174 0 1.283.934 2.523 1.064 2.698.13.174 1.837 2.805 4.451 3.934.622.27 1.108.43 1.487.55.625.2 1.194.17 1.644.103.5-.076 1.54-.63 1.757-1.237.217-.608.217-1.13.152-1.238-.065-.109-.239-.174-.5-.304z"/>
+        </svg>
+    </a>
+    
+    <!-- Chatbase AI Chatbot: removed. The embed here (script id
+         N-G35e3N8zdUPnFLSBxOo) points at Austin Phiri Advisory's own
+         Chatbase bot, which is presumably trained on that firm's content,
+         so it isn't valid for Tigwire. To add a chatbot for this site,
+         create a new bot at https://www.chatbase.co and paste its own
+         embed snippet here. The CSS rule keeping chatbase on the right
+         (in the <style> block above) can stay either way, since it only
+         applies if a chatbase iframe is present. -->
+</body>
+</html>
