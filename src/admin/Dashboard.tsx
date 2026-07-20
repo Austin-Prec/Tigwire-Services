@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Plus, Pencil, Trash2, LogOut, Eye, LayoutTemplate } from 'lucide-react';
+import { Plus, Pencil, Trash2, LogOut, Eye, LayoutTemplate, ImageUp } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { getAllArticlesForAdmin, deleteArticle, type Article } from '../lib/articles';
 
@@ -68,6 +68,12 @@ export default function Dashboard() {
               className="flex items-center gap-2 text-charcoal-200 hover:text-white text-sm font-arial transition-colors"
             >
               <LayoutTemplate size={16} /> Site pages
+            </Link>
+            <Link
+              to="/admin/work"
+              className="flex items-center gap-2 text-charcoal-200 hover:text-white text-sm font-arial transition-colors"
+            >
+              <ImageUp size={16} /> Work photos
             </Link>
             <button
               onClick={handleSignOut}

@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 
-export interface WorkSample {
+// Placeholder shape -- used until real photos exist for a given slot.
+// Kept distinct from the real-photo shape (below) since they describe
+// genuinely different things: generated SVG textures vs. actual image URLs.
+export interface PlaceholderWorkSample {
   label: string;
   beforeColor: string;
   afterColor: string;
@@ -8,8 +11,14 @@ export interface WorkSample {
   afterTexture: 'clean';
 }
 
-// Renders a placeholder "surface" as flat SVG rather than a real photo —
-// Tigwire has no real work photos yet (see the note wherever this is used).
+// Real-photo shape -- matches work_samples table rows (see src/lib/work.ts).
+export interface PhotoWorkSample {
+  label: string;
+  beforeImageUrl: string;
+  afterImageUrl: string;
+}
+
+// Renders a placeholder "surface" as flat SVG rather than a real photo.
 // Each texture is a distinct, deliberately abstract pattern so different
 // samples still read as different scenarios even without photography.
 export function PlaceholderSurface({
@@ -17,7 +26,7 @@ export function PlaceholderSurface({
   texture,
 }: {
   color: string;
-  texture: WorkSample['beforeTexture'] | WorkSample['afterTexture'];
+  texture: PlaceholderWorkSample['beforeTexture'] | PlaceholderWorkSample['afterTexture'];
 }) {
   return (
     <svg
@@ -79,15 +88,19 @@ export function PlaceholderSurface({
 }
 
 interface BeforeAfterCardProps {
-  sample: WorkSample;
+  /** Provide exactly one of these. `photo` takes priority if both are
+   *  somehow given -- real images should always win over placeholders. */
+  photo?: PhotoWorkSample;
+  placeholder?: PlaceholderWorkSample;
   /** Compact mode drops the caption and uses lighter chrome, for embedding
    *  inside the dark hero rather than the light gallery section. */
   compact?: boolean;
 }
 
-export function BeforeAfterCard({ sample, compact }: BeforeAfterCardProps) {
+export function BeforeAfterCard({ photo, placeholder, compact }: BeforeAfterCardProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState(50);
+  const [containerWidth, setContainerWidth] = useState(0);
   const draggingRef = useRef(false);
 
   const updateFromClientX = useCallback((clientX: number) => {
@@ -96,6 +109,20 @@ export function BeforeAfterCard({ sample, compact }: BeforeAfterCardProps) {
     const rect = el.getBoundingClientRect();
     const pct = ((clientX - rect.left) / rect.width) * 100;
     setPosition(Math.min(100, Math.max(0, pct)));
+  }, []);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    // Tracks the card's own rendered width so the "before" photo can stay
+    // sized to the full card (see the comment further down) even as the
+    // card itself resizes with the viewport — a one-time offsetWidth read
+    // would go stale after any resize that isn't also a drag.
+    const observer = new ResizeObserver(([entry]) => {
+      setContainerWidth(entry.contentRect.width);
+    });
+    observer.observe(el);
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -119,11 +146,14 @@ export function BeforeAfterCard({ sample, compact }: BeforeAfterCardProps) {
     };
   }, [updateFromClientX]);
 
+  const label = photo?.label ?? placeholder?.label ?? '';
+  if (!photo && !placeholder) return null;
+
   return (
     <div>
       <div
         ref={containerRef}
-        className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl cursor-ew-resize select-none touch-none"
+        className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl cursor-ew-resize select-none touch-none bg-gray-200"
         onMouseDown={(e) => {
           draggingRef.current = true;
           updateFromClientX(e.clientX);
@@ -134,7 +164,7 @@ export function BeforeAfterCard({ sample, compact }: BeforeAfterCardProps) {
           if (t) updateFromClientX(t.clientX);
         }}
         role="slider"
-        aria-label={`Before and after comparison: ${sample.label}`}
+        aria-label={`Before and after comparison: ${label}`}
         aria-valuenow={Math.round(position)}
         aria-valuemin={0}
         aria-valuemax={100}
@@ -145,14 +175,37 @@ export function BeforeAfterCard({ sample, compact }: BeforeAfterCardProps) {
         }}
       >
         {/* After (base layer, fully visible) */}
-        <PlaceholderSurface color={sample.afterColor} texture={sample.afterTexture} />
+        {photo ? (
+          <img
+            src={photo.afterImageUrl}
+            alt={`${photo.label} — after`}
+            className="absolute inset-0 w-full h-full object-cover"
+            draggable={false}
+          />
+        ) : (
+          <PlaceholderSurface color={placeholder!.afterColor} texture={placeholder!.afterTexture} />
+        )}
 
-        {/* Before (clipped to the left of the handle) */}
+        {/* Before (clipped to the left of the handle). The image itself is
+            sized to the full card, not to this shrinking wrapper — only
+            the wrapper's width and overflow:hidden do the revealing, so
+            the photo underneath never stretches or squishes as position
+            changes, it's simply progressively uncovered. */}
         <div
           className="absolute inset-0 overflow-hidden"
           style={{ width: `${position}%` }}
         >
-          <PlaceholderSurface color={sample.beforeColor} texture={sample.beforeTexture} />
+          {photo ? (
+            <img
+              src={photo.beforeImageUrl}
+              alt={`${photo.label} — before`}
+              className="absolute inset-0 h-full object-cover"
+              style={{ width: containerWidth ? `${containerWidth}px` : '100%' }}
+              draggable={false}
+            />
+          ) : (
+            <PlaceholderSurface color={placeholder!.beforeColor} texture={placeholder!.beforeTexture} />
+          )}
         </div>
 
         {/* Labels */}
@@ -181,7 +234,7 @@ export function BeforeAfterCard({ sample, compact }: BeforeAfterCardProps) {
         </div>
       </div>
       {!compact && (
-        <p className="mt-3 font-arial text-charcoal-500 text-sm font-semibold">{sample.label}</p>
+        <p className="mt-3 font-arial text-charcoal-500 text-sm font-semibold">{label}</p>
       )}
     </div>
   );

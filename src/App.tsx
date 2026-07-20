@@ -13,6 +13,7 @@ import AdminLogin from './admin/Login';
 import AdminDashboard from './admin/Dashboard';
 import AdminEditor from './admin/Editor';
 import PageEditor from './admin/PageEditor';
+import WorkGallery from './admin/WorkGallery';
 import RequireAuth from './admin/RequireAuth';
 
 function App() {
@@ -51,6 +52,14 @@ function App() {
           element={
             <RequireAuth>
               <PageEditor />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/admin/work"
+          element={
+            <RequireAuth>
+              <WorkGallery />
             </RequireAuth>
           }
         />

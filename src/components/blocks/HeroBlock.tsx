@@ -1,5 +1,7 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BeforeAfterCard } from '../shared/BeforeAfterSlider';
+import { getPublishedWorkSamples, type WorkSample } from '../../lib/work';
 
 interface HeroButton {
   label: string;
@@ -24,11 +26,14 @@ interface HeroBlockProps {
 // fanned three-card glass cluster (a generic SaaS/consulting hero pattern
 // carried over from the original Austin Phiri Advisory build, only ever
 // re-skinned with new numbers during the Tigwire content rebuild, never
-// actually redesigned around this subject). content.floating_stats is no
-// longer read by this component; see the retheme conversation this change
-// came from for the reasoning, and WorkGalleryBlock.tsx on the Home page
-// for the fuller four-sample version of the same interaction.
-const HERO_SAMPLE = {
+// actually redesigned around this subject).
+//
+// Shows the first published real work_samples row (by display_order) once
+// one exists; falls back to this fixed placeholder until then. See
+// WorkGalleryBlock.tsx on the Home page for the fuller four-sample version
+// of the same fallback logic, and src/lib/work.ts for the data layer both
+// pull from.
+const HERO_PLACEHOLDER = {
   label: 'Drag to compare',
   beforeColor: '#3A3530',
   afterColor: '#F4F2EE',
@@ -37,6 +42,14 @@ const HERO_SAMPLE = {
 };
 
 export default function HeroBlock({ content }: HeroBlockProps) {
+  const [heroSample, setHeroSample] = useState<WorkSample | null>(null);
+
+  useEffect(() => {
+    getPublishedWorkSamples()
+      .then((samples) => setHeroSample(samples[0] ?? null))
+      .catch(() => setHeroSample(null));
+  }, []);
+
   return (
     <section
       className="relative min-h-[92vh] flex items-center overflow-hidden"
@@ -132,9 +145,22 @@ export default function HeroBlock({ content }: HeroBlockProps) {
               on mobile, and this becomes the first thing visitors reach
               in WorkGalleryBlock further down the page instead. */}
           <div className="hidden lg:block animate-fade-up" style={{ animationDelay: '0.25s' }}>
-            <BeforeAfterCard sample={HERO_SAMPLE} compact />
+            {heroSample ? (
+              <BeforeAfterCard
+                photo={{
+                  label: heroSample.label,
+                  beforeImageUrl: heroSample.before_image_url,
+                  afterImageUrl: heroSample.after_image_url,
+                }}
+                compact
+              />
+            ) : (
+              <BeforeAfterCard placeholder={HERO_PLACEHOLDER} compact />
+            )}
             <p className="mt-4 font-arial text-white/75 text-[13px] text-center">
-              Drag to see the difference — placeholder sample, not a real job yet
+              {heroSample
+                ? 'Drag to see the difference'
+                : 'Drag to see the difference — placeholder sample, not a real job yet'}
             </p>
           </div>
         </div>

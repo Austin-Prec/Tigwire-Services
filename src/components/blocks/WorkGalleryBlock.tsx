@@ -1,11 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
-import { BeforeAfterCard, type WorkSample } from '../shared/BeforeAfterSlider';
+import { BeforeAfterCard, type PlaceholderWorkSample } from '../shared/BeforeAfterSlider';
+import { getPublishedWorkSamples, type WorkSample } from '../../lib/work';
 
 // Four representative scenarios pulled directly from the service list in
 // Executive_Summary.docx (kitchen/residential, office glass, floor
 // disinfection, post-construction), not arbitrary examples -- same
-// discipline as the What to Expect page's scenarios.
-const SAMPLES: WorkSample[] = [
+// discipline as the What to Expect page's scenarios. Used only when there
+// are zero published real work_samples rows yet (see the fetch below) --
+// once real photos are uploaded through /admin/work and published, this
+// array stops being shown at all.
+const PLACEHOLDER_SAMPLES: PlaceholderWorkSample[] = [
   {
     label: 'Residential kitchen',
     beforeColor: '#3A3530',
@@ -39,6 +43,13 @@ const SAMPLES: WorkSample[] = [
 export default function WorkGalleryBlock() {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [realSamples, setRealSamples] = useState<WorkSample[] | null>(null);
+
+  useEffect(() => {
+    getPublishedWorkSamples()
+      .then(setRealSamples)
+      .catch(() => setRealSamples([])); // fall back to placeholders on any fetch error too
+  }, []);
 
   useEffect(() => {
     const el = ref.current;
@@ -56,6 +67,12 @@ export default function WorkGalleryBlock() {
     return () => observer.disconnect();
   }, []);
 
+  // Still loading: render nothing rather than flash placeholders and then
+  // swap to real photos a moment later, which would look like a layout jump.
+  if (realSamples === null) return null;
+
+  const usingPlaceholders = realSamples.length === 0;
+
   return (
     <section
       ref={ref}
@@ -69,18 +86,35 @@ export default function WorkGalleryBlock() {
             See the difference
           </h2>
           <p className="font-arial text-gray-600 text-base leading-relaxed">
-            Drag the slider on each panel to compare before and after. These
-            are placeholder samples, not photos of completed jobs yet -- Tigwire
-            is a newly established company, so real before-and-after photos
-            will replace these as we complete work. Nothing here is staged as
-            an actual client site.
+            {usingPlaceholders ? (
+              <>
+                Drag the slider on each panel to compare before and after. These
+                are placeholder samples, not photos of completed jobs yet --
+                Tigwire is a newly established company, so real before-and-after
+                photos will replace these as we complete work. Nothing here is
+                staged as an actual client site.
+              </>
+            ) : (
+              'Drag the slider on each panel to compare before and after.'
+            )}
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-10">
-          {SAMPLES.map((sample) => (
-            <BeforeAfterCard key={sample.label} sample={sample} />
-          ))}
+          {usingPlaceholders
+            ? PLACEHOLDER_SAMPLES.map((sample) => (
+                <BeforeAfterCard key={sample.label} placeholder={sample} />
+              ))
+            : realSamples.map((sample) => (
+                <BeforeAfterCard
+                  key={sample.id}
+                  photo={{
+                    label: sample.label,
+                    beforeImageUrl: sample.before_image_url,
+                    afterImageUrl: sample.after_image_url,
+                  }}
+                />
+              ))}
         </div>
       </div>
     </section>
