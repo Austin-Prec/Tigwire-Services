@@ -57,26 +57,37 @@ Deno.serve(async (req: Request) => {
     if (req.method === "POST") {
       const body: WorkSamplePayload = await req.json();
 
-      // label is intentionally allowed to be empty on create: the admin UI
-      // (WorkGallery.tsx handleAdd) creates a blank draft row first, then
-      // the label is filled in and saved inline via handleLabelBlur (a
-      // PATCH). Rejecting an empty label here breaks "Add entry" entirely,
-      // since no row is ever created for the label field to appear on.
-      if (!body.before_image_url || !body.after_image_url) {
+      // label and both image URLs are intentionally allowed to be empty/
+      // missing on create: the admin UI (WorkGallery.tsx handleAdd) creates
+      // a blank draft row first, then each field is filled in and saved
+      // inline afterward -- label via handleLabelBlur, each image via its
+      // own upload button (both are separate PATCH calls). Requiring any
+      // of the three up front breaks "Add entry" entirely, since no row is
+      // ever created for those fields to appear on. See migration
+      // 20260720120002_make_work_sample_images_nullable.sql, which drops
+      // the matching NOT NULL constraints these columns had.
+
+      const status = body.status === "published" ? "published" : "draft";
+
+      // Mirrors WorkGallery.tsx's canPublish check (before_image_url &&
+      // after_image_url) server-side. The frontend never sends
+      // status: 'published' on create -- handleAdd always sends 'draft' --
+      // but this function is a public HTTP endpoint once authenticated, so
+      // that's a UI convention, not an enforced rule, unless it's also
+      // checked here.
+      if (status === "published" && (!body.before_image_url || !body.after_image_url)) {
         return jsonResponse(
-          { error: "Both before_image_url and after_image_url are required" },
+          { error: "Both before_image_url and after_image_url are required to publish" },
           400
         );
       }
-
-      const status = body.status === "published" ? "published" : "draft";
 
       const { data, error } = await supabase
         .from("work_samples")
         .insert({
           label: (body.label ?? "").trim(),
-          before_image_url: body.before_image_url,
-          after_image_url: body.after_image_url,
+          before_image_url: body.before_image_url ?? null,
+          after_image_url: body.after_image_url ?? null,
           display_order: body.display_order ?? 0,
           status,
         })
@@ -100,7 +111,7 @@ Deno.serve(async (req: Request) => {
 
       const { data: current, error: fetchError } = await supabase
         .from("work_samples")
-        .select("id")
+        .select("id, before_image_url, after_image_url")
         .eq("id", body.id)
         .maybeSingle();
 
@@ -110,11 +121,30 @@ Deno.serve(async (req: Request) => {
 
       const updates: Record<string, unknown> = { updated_at: new Date().toISOString() };
 
-      if (body.label !== undefined) updates.label = body.label.trim();
+      if (body.label !== undefined) updates.label = (body.label ?? "").trim();
       if (body.before_image_url !== undefined) updates.before_image_url = body.before_image_url;
       if (body.after_image_url !== undefined) updates.after_image_url = body.after_image_url;
       if (body.display_order !== undefined) updates.display_order = body.display_order;
       if (body.status !== undefined) updates.status = body.status;
+
+      // Mirrors WorkGallery.tsx's canPublish check server-side (see the
+      // same comment on the POST branch above). This is the path
+      // handleStatusToggle actually calls, so it's the more important of
+      // the two to guard -- resolve each image field against whatever this
+      // same request is also setting it to, in case both are patched in
+      // one call, then fall back to the row's current value.
+      if (updates.status === "published") {
+        const willHaveBeforeImage =
+          body.before_image_url !== undefined ? body.before_image_url : current.before_image_url;
+        const willHaveAfterImage =
+          body.after_image_url !== undefined ? body.after_image_url : current.after_image_url;
+        if (!willHaveBeforeImage || !willHaveAfterImage) {
+          return jsonResponse(
+            { error: "Both before_image_url and after_image_url are required to publish" },
+            400
+          );
+        }
+      }
 
       const { data, error } = await supabase
         .from("work_samples")
