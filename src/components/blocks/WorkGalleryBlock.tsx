@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BeforeAfterCard, type PlaceholderWorkSample } from '../shared/BeforeAfterSlider';
 import { getPublishedWorkSamples, type WorkSample } from '../../lib/work';
 
@@ -41,43 +41,12 @@ const PLACEHOLDER_SAMPLES: PlaceholderWorkSample[] = [
 ];
 
 export default function WorkGalleryBlock() {
-  const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
   const [realSamples, setRealSamples] = useState<WorkSample[] | null>(null);
 
   useEffect(() => {
     getPublishedWorkSamples()
       .then(setRealSamples)
       .catch(() => setRealSamples([])); // fall back to placeholders on any fetch error too
-  }, []);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(el);
-        }
-      },
-      { rootMargin: '0px 0px -100px 0px' }
-    );
-    observer.observe(el);
-
-    // Safety net: this is exactly the class of bug just fixed above (a
-    // scroll-triggered reveal that can end up permanently opacity-0 if the
-    // observer's condition is never met -- previously a threshold that
-    // needed 15% of this section's own height, 1000px+, already in view).
-    // A decorative fade-in should degrade to "show it anyway" in the
-    // worst case, never to "hidden forever" -- so if intersection hasn't
-    // fired within 2s of mount for any reason, show the section anyway.
-    const fallback = window.setTimeout(() => setIsVisible(true), 2000);
-
-    return () => {
-      observer.disconnect();
-      window.clearTimeout(fallback);
-    };
   }, []);
 
   // Still loading: render nothing rather than flash placeholders and then
@@ -87,12 +56,7 @@ export default function WorkGalleryBlock() {
   const usingPlaceholders = realSamples.length === 0;
 
   return (
-    <section
-      ref={ref}
-      className={`bg-gray-50 section-padding transition-all duration-700 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-      }`}
-    >
+    <section className="bg-gray-50 section-padding">
       <div className="container-main px-6 lg:px-20">
         <div className="max-w-2xl mb-12">
           <h2 className="font-garamond text-charcoal-500 text-3xl md:text-4xl font-semibold tracking-tight mb-3">
