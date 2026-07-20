@@ -80,7 +80,7 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
   return (
     <div
       ref={ref}
-      className={`group relative rounded-2xl border p-6 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(21, 24, 26,0.3),inset_0_1px_0_rgba(255,255,255,0.6)] ${
+      className={`group relative rounded-2xl border p-6 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(21,24,26,0.3),inset_0_1px_0_rgba(255,255,255,0.6)] ${
         isCustom ? 'border-clay-200/50 hover:border-transparent' : 'border-gray-200 hover:border-transparent'
       } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
       style={{ transitionDelay: isVisible ? `${index * 70}ms` : '0ms' }}

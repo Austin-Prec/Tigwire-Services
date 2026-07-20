@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getPageBlocks, type PageBlock } from '../lib/pages';
 import HeroBlock from '../components/blocks/HeroBlock';
+import WorkGalleryBlock from '../components/blocks/WorkGalleryBlock';
 import ValueCardsBlock from '../components/blocks/ValueCardsBlock';
 import StatBarBlock from '../components/blocks/StatBarBlock';
 import LinkPreviewBlock from '../components/blocks/LinkPreviewBlock';
@@ -27,7 +28,18 @@ export default function Home() {
       {blocks.map((block) => {
         switch (block.type) {
           case 'hero':
-            return <HeroBlock key={block.id} content={block.content} />;
+            return (
+              <div key={block.id}>
+                <HeroBlock content={block.content} />
+                {/* WorkGalleryBlock is fixed UI, not editable block content
+                    — it carries real drag/touch interaction state, the
+                    same distinction applied to ContactForm elsewhere in
+                    this project. Rendered right after the hero regardless
+                    of migration content, since it isn't part of the
+                    page_blocks data for 'home'. */}
+                <WorkGalleryBlock />
+              </div>
+            );
           case 'value_cards':
             return <ValueCardsBlock key={block.id} content={block.content} />;
           case 'stat_bar':

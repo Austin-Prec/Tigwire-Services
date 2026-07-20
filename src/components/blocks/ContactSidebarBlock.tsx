@@ -21,7 +21,7 @@ interface ContactSidebarBlockProps {
 export default function ContactSidebarBlock({ content }: ContactSidebarBlockProps) {
   return (
     <div className="lg:col-span-2">
-      <div className="rounded-2xl bg-gray-50 border border-gray-200 p-8 sticky top-28 transition-shadow duration-300 hover:shadow-[0_20px_50px_-20px_rgba(21, 24, 26,0.2)]">
+      <div className="rounded-2xl bg-gray-50 border border-gray-200 p-8 sticky top-28 transition-shadow duration-300 hover:shadow-[0_20px_50px_-20px_rgba(21,24,26,0.2)]">
         {content.heading && (
           <h3 className="font-garamond text-charcoal-500 text-xl font-semibold mb-6">
             {content.heading}

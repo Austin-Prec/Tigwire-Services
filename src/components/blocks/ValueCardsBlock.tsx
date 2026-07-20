@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import { Shield, Search, FileCheck, TrendingUp } from 'lucide-react';
+import { Shield, Leaf, FileCheck, Sparkles } from 'lucide-react';
 
-const ICONS: Record<string, typeof Shield> = { Shield, Search, FileCheck, TrendingUp };
+const ICONS: Record<string, typeof Shield> = { Shield, Leaf, FileCheck, Sparkles };
 
 interface ValueCard {
   icon: string;
@@ -81,7 +81,7 @@ function ValueCard({ card, index }: { card: ValueCard; index: number }) {
   return (
     <div
       ref={ref}
-      className={`group relative rounded-[20px] border border-gray-200 bg-white p-8 lg:p-9 transition-all duration-500 hover:-translate-y-2.5 hover:border-transparent hover:shadow-[0_30px_60px_-12px_rgba(21, 24, 26,0.3),inset_0_1px_0_rgba(255,255,255,0.6)] ${
+      className={`group relative rounded-[20px] border border-gray-200 bg-white p-8 lg:p-9 transition-all duration-500 hover:-translate-y-2.5 hover:border-transparent hover:shadow-[0_30px_60px_-12px_rgba(21,24,26,0.3),inset_0_1px_0_rgba(255,255,255,0.6)] ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
       }`}
       style={{ transitionDelay: isVisible ? `${index * 100}ms` : '0ms' }}

@@ -1,5 +1,5 @@
 /*
-  # Seed Home page blocks — Tigwire Services
+  # Seed Home page blocks -- Tigwire Services
 
   Ports Tigwire's business concept (from Executive_Summary.docx) into
   page_blocks rows, reusing Austin Phiri Advisory's four Home block types
@@ -7,27 +7,38 @@
   Malawian cleaning company rather than a governance advisory practice.
 
   Content notes:
-  - hero.floating_stats and hero.badge_text are new optional fields added to
-    HeroBlock.tsx during this rebuild — the old component hardcoded three
+  - hero.badge_text is an optional field added to HeroBlock.tsx during the
+    original content rebuild -- the old component hardcoded three
     forensic-finance stat cards directly in JSX, which had no Tigwire
-    equivalent, so the cards are now content-driven from here instead.
+    equivalent, so a right-column visual became content-driven from here
+    instead.
+  - hero.floating_stats existed briefly (three small stat cards fanned in
+    the hero's right column) but was removed during a later retheme pass:
+    that fanned-card pattern was identified as a generic SaaS/consulting
+    hero template carried over from the original site, only ever re-skinned
+    with new numbers rather than redesigned around this subject. HeroBlock.tsx
+    now renders a single before/after comparison slider in that column
+    instead (see src/components/shared/BeforeAfterSlider.tsx), which is
+    specific to cleaning as a subject in a way the stat cards never were.
+    The sample shown there is a fixed placeholder in the component itself,
+    not content-driven, so floating_stats is no longer part of this block's
+    shape -- any value under that key in older data is simply ignored.
   - stat_bar figures below are drawn directly from the business plan's
     stated Year One *objectives* (30 clients, 90%+ satisfaction, etc.),
     framed explicitly as commitments/targets rather than achieved results,
     since Tigwire is pre-launch and has no track record yet to report.
 
-  Block shapes (unchanged from the original Home migration):
+  Block shapes (current):
 
   - hero:         { background_image_url, badge_text, headline, subheadline,
-                     quote, buttons: [{ label, link, style }],
-                     floating_stats: [{ icon, value, label, detail }] }
+                     quote, buttons: [{ label, link, style }] }
   - value_cards:  { title, subtitle, cards: [{ icon, title, description }] }
   - stat_bar:     { label, stats: [{ value, label, detail }] }
   - link_preview: { title, body, link_text, link }
 */
 
 INSERT INTO page_blocks (page, type, position, content)
-VALUES ('home', 'hero', 0, '{"background_image_url":"/landing-page-bg.jpg","badge_text":"Serving Lilongwe and beyond","headline":"Reliable, affordable cleaning for homes, offices, and institutions across Malawi.","subheadline":"Professional cleaning and facility services built on integrity, professionalism, and consistent results — every visit, every time.","quote":"“Our mission is to deliver high-quality, affordable, and environmentally responsible cleaning solutions through professionalism, innovation, and integrity.”","buttons":[{"label":"Get a Free Quote","link":"/contact","style":"primary"},{"label":"See Our Services","link":"/services","style":"secondary"}],"floating_stats":[{"icon":"Sparkles","value":"11","label":"Service types","detail":"From homes to hotels and banks"},{"icon":"Leaf","value":"Eco","label":"Friendly products","detail":"Safe for families and staff"},{"icon":"Clock","value":"24/7","label":"Emergency callouts","detail":"For urgent cleaning needs"}]}'::jsonb);
+VALUES ('home', 'hero', 0, '{"background_image_url":"/landing-page-bg.jpg","badge_text":"Serving Lilongwe and beyond","headline":"Reliable, affordable cleaning for homes, offices, and institutions across Malawi.","subheadline":"Professional cleaning and facility services built on integrity, professionalism, and consistent results -- every visit, every time.","quote":"\u201cOur mission is to deliver high-quality, affordable, and environmentally responsible cleaning solutions through professionalism, innovation, and integrity.\u201d","buttons":[{"label":"Get a Free Quote","link":"/contact","style":"primary"},{"label":"See Our Services","link":"/services","style":"secondary"}]}'::jsonb);
 
 INSERT INTO page_blocks (page, type, position, content)
 VALUES ('home', 'value_cards', 1, '{"title":"Why Choose Tigwire","subtitle":"Not just a clean space. A service you can rely on, at a price that makes sense.","cards":[{"icon":"Shield","title":"Trained & Trustworthy Staff","description":"Every team member is trained, vetted, and supervised, so you can hand over your keys with confidence."},{"icon":"Leaf","title":"Environmentally Responsible","description":"We use eco-friendly products and sustainable methods that protect your family, staff, and the environment."},{"icon":"FileCheck","title":"Free Quotes & Site Inspections","description":"No surprises. We assess your space, agree the scope, and price it fairly before any work begins."}]}'::jsonb);

@@ -54,7 +54,7 @@ export default function PhotoBlock({ content }: PhotoBlockProps) {
         <img
           src={content.image_url}
           alt={content.alt || ''}
-          className="relative w-full rounded-xl shadow-[0_25px_50px_-15px_rgba(21, 24, 26,0.35)] transition-transform duration-500 hover:scale-[1.015]"
+          className="relative w-full rounded-xl shadow-[0_25px_50px_-15px_rgba(21,24,26,0.35)] transition-transform duration-500 hover:scale-[1.015]"
         />
       </div>
 

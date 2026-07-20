@@ -64,7 +64,7 @@ const BLOCK_TYPE_INFO: Record<BlockType, { label: string; icon: typeof ImageIcon
   bio: { label: 'Bio block', icon: AlignLeft, defaultContent: { name: '', title: '', quote: '', paragraphs: [''], footnote: '' }, pages: ['about'] },
   list: { label: 'List block', icon: ListIcon, defaultContent: { title: '', icon: 'Award', items: [''], footnote: '' }, pages: ['about'] },
   credentials_panel: { label: 'Credentials panel block', icon: BadgeCheck, defaultContent: { panels: [] }, pages: ['about'] },
-  hero: { label: 'Hero block', icon: Sparkles, defaultContent: { background_image_url: '', badge_text: '', headline: '', subheadline: '', quote: '', buttons: [], floating_stats: [] }, pages: ['home'] },
+  hero: { label: 'Hero block', icon: Sparkles, defaultContent: { background_image_url: '', badge_text: '', headline: '', subheadline: '', quote: '', buttons: [] }, pages: ['home'] },
   value_cards: { label: 'Value cards block', icon: LayoutGrid, defaultContent: { title: '', subtitle: '', cards: [] }, pages: ['home'] },
   stat_bar: { label: 'Stat bar block', icon: BarChart3, defaultContent: { label: '', stats: [] }, pages: ['home'] },
   link_preview: { label: 'Link preview block', icon: ExternalLink, defaultContent: { title: '', body: '', link_text: '', link: '/about' }, pages: ['home'] },

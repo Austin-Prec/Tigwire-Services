@@ -72,7 +72,7 @@ function CaseStudyCard({ study, index }: { study: Scenario; index: number }) {
   return (
     <div
       ref={ref}
-      className={`rounded-2xl border border-gray-200 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-transparent hover:shadow-[0_30px_60px_-15px_rgba(21, 24, 26,0.3),inset_0_1px_0_rgba(255,255,255,0.6)] ${
+      className={`rounded-2xl border border-gray-200 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-transparent hover:shadow-[0_30px_60px_-15px_rgba(21,24,26,0.3),inset_0_1px_0_rgba(255,255,255,0.6)] ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
       }`}
       style={{ transitionDelay: isVisible ? `${index * 100}ms` : '0ms' }}

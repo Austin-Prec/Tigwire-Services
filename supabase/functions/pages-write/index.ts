@@ -7,12 +7,12 @@ const corsHeaders = {
 };
 
 const VALID_TYPES = new Set([
-  "header", "photo", "bio", "list", "credentials_panel", // About page blocks (header also used on Frameworks, Services, Contact, Case Studies)
+  "header", "photo", "bio", "list", "credentials_panel", // About page blocks (header also used on How We Work, Services, Contact, What to Expect)
   "hero", "value_cards", "stat_bar", "link_preview", // Home page blocks
-  "framework_section", "cta_banner", // Frameworks page blocks
+  "framework_section", "cta_banner", // How We Work page blocks
   "service_grid", "pricing_notes", // Services page blocks
   "contact_sidebar", // Contact page blocks
-  "case_study_grid", // Case Studies page blocks
+  "case_study_grid", // What to Expect page blocks
 ]);
 
 interface BlockPayload {

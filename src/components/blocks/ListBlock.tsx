@@ -89,7 +89,7 @@ function ListItem({ item, index }: { item: string; index: number }) {
   return (
     <div
       ref={ref}
-      className={`rounded-lg bg-white border border-gray-200 px-4 py-3 transition-all duration-500 hover:border-transparent hover:shadow-[0_20px_40px_-16px_rgba(21, 24, 26,0.25)] hover:-translate-y-0.5 ${
+      className={`rounded-lg bg-white border border-gray-200 px-4 py-3 transition-all duration-500 hover:border-transparent hover:shadow-[0_20px_40px_-16px_rgba(21,24,26,0.25)] hover:-translate-y-0.5 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
       }`}
       style={{ transitionDelay: isVisible ? `${index * 60}ms` : '0ms' }}

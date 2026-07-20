@@ -97,28 +97,26 @@ supabase functions deploy pages-write
 `index.ts` into **Dashboard → Edge Functions → Create a new function** with
 the matching name.)
 
-**About the contact form specifically:** there are two separate,
-independent pathways for handling contact form submissions in this
-codebase, and right now **neither is fully configured**:
+**About the contact form specifically:** the main enquiry form in
+`ContactForm.tsx` is now live, posting to Tigwire's own Formspree endpoint
+(`xbdnonyo`). Submissions should land wherever that Formspree form is set
+to deliver — check formspree.io's dashboard if you're not sure where.
 
-- The live form in `ContactForm.tsx` currently posts to a placeholder
-  Formspree endpoint (`REPLACE_WITH_TIGWIRE_FORM_ID`) that will fail until
-  you create a real form at formspree.io and paste its endpoint URL in.
-- A separate, currently-unused `supabase/functions/contact` edge function
-  also exists, which would save messages to the `contact_messages` table
-  and optionally email them via Resend if you set a `RESEND_API_KEY`
-  secret. It is not called by the live form. If you'd rather use this
-  Supabase-based pathway instead of Formspree, you'll need to update
-  `ContactForm.tsx` to call it, and deploy it with
-  `supabase functions deploy contact`.
+A second, separate pathway also exists in this codebase but is **not**
+what the live form uses: `supabase/functions/contact` is a currently-unused
+edge function that would instead save messages to the `contact_messages`
+table and optionally email them via Resend if you set a `RESEND_API_KEY`
+secret. Nothing calls it right now. There's no reason to set this up
+unless you'd specifically rather have enquiries land in a searchable
+Supabase table instead of Formspree — if so, you'd need to update
+`ContactForm.tsx` to call it instead, and deploy it with
+`supabase functions deploy contact`.
 
-Pick one pathway (Formspree is simpler to set up; the Supabase pathway
-keeps everything in one place and gives you a searchable messages table)
-and make sure enquiries actually reach you before treating the site as
-launch-ready. There's also a second, separate Formspree placeholder for
-the newsletter signup form on the Insights page
-(`REPLACE_WITH_TIGWIRE_NEWSLETTER_FORM_ID`) that needs its own real
-endpoint if you want that feature to work.
+There's also a **separate** Formspree placeholder for the newsletter
+signup form on the Insights page (`REPLACE_WITH_TIGWIRE_NEWSLETTER_FORM_ID`)
+that's still unconfigured — that's a different form on Formspree's side
+from the contact form above, so it needs its own real endpoint pasted in
+if you want that feature to work.
 
 ## 4. Create your login
 

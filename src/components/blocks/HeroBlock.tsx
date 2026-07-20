@@ -1,19 +1,10 @@
 import { Link } from 'react-router-dom';
-import { Shield, Search, Sparkles, Users, Clock, CheckCircle2 } from 'lucide-react';
-
-const ICONS: Record<string, typeof Shield> = { Shield, Search, Sparkles, Users, Clock, CheckCircle2 };
+import { BeforeAfterCard } from '../shared/BeforeAfterSlider';
 
 interface HeroButton {
   label: string;
   link: string;
   style: 'primary' | 'secondary';
-}
-
-interface HeroFloatingStat {
-  icon?: string;
-  value: string;
-  label: string;
-  detail?: string;
 }
 
 interface HeroBlockProps {
@@ -24,19 +15,26 @@ interface HeroBlockProps {
     subheadline?: string;
     quote?: string;
     buttons?: HeroButton[];
-    floating_stats?: HeroFloatingStat[];
   };
 }
 
-// Fixed layout geometry for up to 3 fanned, stacked cards — rotation, offset,
-// z-index, and background tint are positional (card 1/2/3), not tied to any
-// specific stat's meaning, so this stays generic across any set of stats
-// passed in via content.floating_stats.
-const CARD_POSITIONS = [
-  { top: 0, left: '40px', rotate: '-6deg', z: 3, bg: 'bg-white/10' },
-  { top: '90px', left: '90px', rotate: '4deg', z: 2, bg: 'bg-clay-200/[0.15]' },
-  { top: '190px', left: '20px', rotate: '-3deg', z: 1, bg: 'bg-sage-400/[0.15]' },
-];
+// A single before/after sample embedded directly in the hero -- the first
+// interactive thing a visitor encounters is a drag-to-reveal transformation,
+// which is specific to cleaning as a subject. This replaces the previous
+// fanned three-card glass cluster (a generic SaaS/consulting hero pattern
+// carried over from the original Austin Phiri Advisory build, only ever
+// re-skinned with new numbers during the Tigwire content rebuild, never
+// actually redesigned around this subject). content.floating_stats is no
+// longer read by this component; see the retheme conversation this change
+// came from for the reasoning, and WorkGalleryBlock.tsx on the Home page
+// for the fuller four-sample version of the same interaction.
+const HERO_SAMPLE = {
+  label: 'Drag to compare',
+  beforeColor: '#3A3530',
+  afterColor: '#F4F2EE',
+  beforeTexture: 'grime' as const,
+  afterTexture: 'clean' as const,
+};
 
 export default function HeroBlock({ content }: HeroBlockProps) {
   return (
@@ -129,42 +127,15 @@ export default function HeroBlock({ content }: HeroBlockProps) {
             </div>
           </div>
 
-          {/* Right column: fanned, stacked glass card cluster. Hidden below
-              lg — the fixed rotation/offset math that makes the fan read
-              correctly needs real horizontal room, and on a narrow phone
-              screen this would either overflow or need to be crushed into
-              something unrecognizable. The two-column grid collapses to
-              a single column above, so mobile still gets the full text
-              content, just without this decorative cluster. */}
-          <div className="hidden lg:block relative h-[420px]" aria-hidden="true">
-            {content.floating_stats?.slice(0, 3).map((stat, i) => {
-              const pos = CARD_POSITIONS[i];
-              const IconComponent = stat.icon ? ICONS[stat.icon] : undefined;
-              return (
-                <div
-                  key={i}
-                  className={`absolute w-[280px] rounded-[20px] border border-white/15 ${pos.bg} backdrop-blur-xl p-6`}
-                  style={{
-                    top: pos.top,
-                    left: pos.left,
-                    transform: `rotate(${pos.rotate})`,
-                    zIndex: pos.z,
-                    boxShadow: '0 30px 60px -12px rgba(0,0,0,0.5)',
-                  }}
-                >
-                  {IconComponent && (
-                    <div className="w-9 h-9 rounded-[10px] bg-clay-200/20 flex items-center justify-center mb-3">
-                      <IconComponent size={18} className="text-clay-200" strokeWidth={2} />
-                    </div>
-                  )}
-                  <p className="font-garamond text-clay-200 text-[1.7rem] font-bold leading-none">{stat.value}</p>
-                  <p className="font-arial text-white/85 text-[13px] font-semibold mt-1">{stat.label}</p>
-                  {stat.detail && (
-                    <p className="font-arial text-white/50 text-[11px] mt-0.5">{stat.detail}</p>
-                  )}
-                </div>
-              );
-            })}
+          {/* Right column: a single before/after slider. Hidden below lg,
+              same reasoning as before — the text column takes full width
+              on mobile, and this becomes the first thing visitors reach
+              in WorkGalleryBlock further down the page instead. */}
+          <div className="hidden lg:block animate-fade-up" style={{ animationDelay: '0.25s' }}>
+            <BeforeAfterCard sample={HERO_SAMPLE} compact />
+            <p className="mt-4 font-arial text-white/75 text-[13px] text-center">
+              Drag to see the difference — placeholder sample, not a real job yet
+            </p>
           </div>
         </div>
       </div>

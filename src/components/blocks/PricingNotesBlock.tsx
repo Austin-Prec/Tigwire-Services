@@ -36,7 +36,7 @@ export default function PricingNotesBlock({ content }: PricingNotesBlockProps) {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
         }`}
       >
-        <div className="rounded-xl p-6 bg-gray-50 border border-gray-200 transition-all duration-300 hover:border-transparent hover:shadow-[0_20px_40px_-16px_rgba(21, 24, 26,0.2)]">
+        <div className="rounded-xl p-6 bg-gray-50 border border-gray-200 transition-all duration-300 hover:border-transparent hover:shadow-[0_20px_40px_-16px_rgba(21,24,26,0.2)]">
           {content.heading && (
             <h4 className="font-garamond text-charcoal-500 text-lg font-semibold mb-3">
               {content.heading}

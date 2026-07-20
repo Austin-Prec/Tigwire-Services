@@ -41,11 +41,7 @@ export default function ContactForm() {
     setError('');
 
     try {
-      // TODO: replace with Tigwire Services' own Formspree endpoint before
-      // launch — this placeholder ID does not point to a real account, so
-      // submissions will fail until it's swapped in. Create a form at
-      // https://formspree.io and paste its endpoint URL here.
-      const response = await fetch('https://formspree.io/f/REPLACE_WITH_TIGWIRE_FORM_ID', {
+      const response = await fetch('https://formspree.io/f/xbdnonyo', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -205,7 +201,7 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={submitting}
-            className="w-full bg-gradient-to-br from-charcoal-500 to-charcoal-600 text-white px-6 py-3.5 rounded-xl font-semibold shadow-[0_8px_24px_-8px_rgba(21, 24, 26,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_32px_-8px_rgba(21, 24, 26,0.5)] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0 flex items-center justify-center gap-2"
+            className="w-full bg-gradient-to-br from-charcoal-500 to-charcoal-600 text-white px-6 py-3.5 rounded-xl font-semibold shadow-[0_8px_24px_-8px_rgba(21,24,26,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_32px_-8px_rgba(21,24,26,0.5)] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0 flex items-center justify-center gap-2"
           >
             <Send size={16} />
             {submitting ? 'Sending...' : 'Send Enquiry'}

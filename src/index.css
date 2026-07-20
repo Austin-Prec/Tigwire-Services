@@ -7,13 +7,13 @@
     scroll-behavior: smooth;
   }
   body {
-    font-family: 'EB Garamond', Arial, Helvetica, sans-serif;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
     color: #1a1a1a;
     font-size: 18px;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'EB Garamond', Garamond, Georgia, serif;
+    font-family: 'Space Grotesk', Inter, Arial, sans-serif;
   }
 }
 
