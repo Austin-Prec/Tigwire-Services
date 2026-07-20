@@ -61,10 +61,23 @@ export default function WorkGalleryBlock() {
           observer.unobserve(el);
         }
       },
-      { threshold: 0.15 }
+      { rootMargin: '0px 0px -100px 0px' }
     );
     observer.observe(el);
-    return () => observer.disconnect();
+
+    // Safety net: this is exactly the class of bug just fixed above (a
+    // scroll-triggered reveal that can end up permanently opacity-0 if the
+    // observer's condition is never met -- previously a threshold that
+    // needed 15% of this section's own height, 1000px+, already in view).
+    // A decorative fade-in should degrade to "show it anyway" in the
+    // worst case, never to "hidden forever" -- so if intersection hasn't
+    // fired within 2s of mount for any reason, show the section anyway.
+    const fallback = window.setTimeout(() => setIsVisible(true), 2000);
+
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(fallback);
+    };
   }, []);
 
   // Still loading: render nothing rather than flash placeholders and then
