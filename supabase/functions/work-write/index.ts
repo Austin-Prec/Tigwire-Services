@@ -57,9 +57,11 @@ Deno.serve(async (req: Request) => {
     if (req.method === "POST") {
       const body: WorkSamplePayload = await req.json();
 
-      if (!body.label || !body.label.trim()) {
-        return jsonResponse({ error: "Label is required" }, 400);
-      }
+      // label is intentionally allowed to be empty on create: the admin UI
+      // (WorkGallery.tsx handleAdd) creates a blank draft row first, then
+      // the label is filled in and saved inline via handleLabelBlur (a
+      // PATCH). Rejecting an empty label here breaks "Add entry" entirely,
+      // since no row is ever created for the label field to appear on.
       if (!body.before_image_url || !body.after_image_url) {
         return jsonResponse(
           { error: "Both before_image_url and after_image_url are required" },
@@ -72,7 +74,7 @@ Deno.serve(async (req: Request) => {
       const { data, error } = await supabase
         .from("work_samples")
         .insert({
-          label: body.label.trim(),
+          label: (body.label ?? "").trim(),
           before_image_url: body.before_image_url,
           after_image_url: body.after_image_url,
           display_order: body.display_order ?? 0,
